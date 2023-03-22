@@ -21,7 +21,7 @@ To publish the library as a [npm](https://www.npmjs.com/), please follow the pro
 Then install it via:
 
 ```shell
-npm install sdk-api-mgmt-javascript --save
+npm install @geins/sdk-api-mgmt-javascript --save
 ```
 
 Finally, you need to build the module:
