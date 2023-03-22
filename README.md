@@ -64,7 +64,7 @@ api.createBrand(brand, callback);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
