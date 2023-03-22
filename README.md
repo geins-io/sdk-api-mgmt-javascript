@@ -1,6 +1,6 @@
 # Introduction
 
-JavaScript api-client Geins Management API
+Javascript ApiClient for Geins Managemet API
 
 Geins Management API is an RESTful api to power your applications who manages your geins services. Geins provides an easy-to-use and scalable solution for managing all aspects of an online store, from product listings and customer information to order processing and payment transactions. 
 

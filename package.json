@@ -1,6 +1,6 @@
 {
-  "name": "sdk-api-mgmt-javascript",
-  "version": "v1.7.1",
+  "name": "@geins/sdk-api-mgmt-javascript",
+  "version": "1.7.1",
   "description": "Javascript ApiClient for Geins Managemet API",
   "license": "MIT",
   "main": "dist/index.js",
@@ -42,5 +42,25 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geins-io/sdk-api-mgmt-javascript.git"
+  },
+  "keywords": [
+    "api",
+    "saas",
+    "ecommerce",
+    "javascript",
+    "fetch"
+  ],
+  "author": "Geins",
+  "bugs": {
+    "url": "https://github.com/geins-io/sdk-api-mgmt-javascript/issues"
+  },
+  "homepage": "https://github.com/geins-io/sdk-api-mgmt-javascript#readme"
 }
