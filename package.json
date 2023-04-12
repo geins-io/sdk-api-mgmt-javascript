@@ -1,6 +1,6 @@
 {
   "name": "@geins/sdk-api-mgmt-javascript",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "Javascript ApiClient for Geins Managemet API",
   "license": "MIT",
   "main": "dist/index.js",
