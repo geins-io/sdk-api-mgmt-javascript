@@ -23,13 +23,6 @@ Install it via:
 npm install @geins/sdk-api-mgmt-javascript --save
 ```
 
-Finally, you need to build the module:
-
-```shell
-npm run build
-```
-
-
 ## Getting Started
 
 Please follow the [installation](#installation) instruction and execute the following JS code:
