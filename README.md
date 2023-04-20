@@ -16,11 +16,8 @@ Use one of our [SDKs](https://docs.geins.io/docs/sdk/introduction) to get starte
 
 ### For [Node.js](https://nodejs.org/)
 
-#### npm
 
-To publish the library as a [npm](https://www.npmjs.com/), please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
-Then install it via:
+Install it via:
 
 ```shell
 npm install @geins/sdk-api-mgmt-javascript --save
