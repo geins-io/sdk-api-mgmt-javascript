@@ -1,3 +1,5 @@
+[![NPM Package][npm]][npm-url]
+[![NPM Downloads][npm-downloads-per-month]][npm-trends]
 # Introduction
 
 Javascript ApiClient for Geins Managemet API
@@ -292,3 +294,8 @@ Class | Method | HTTP request | Description
 
 - **Type**: HTTP basic authentication
 
+
+[npm]: https://img.shields.io/npm/v/@geins/sdk-api-mgmt-javascript
+[npm-url]: https://www.npmjs.com/package/@geins/sdk-api-mgmt-javascript
+[npm-downloads-per-month]: https://img.shields.io/npm/dm/@geins/sdk-api-mgmt-javascript.svg
+[npm-trends]: https://npmtrends.com/@geins/sdk-api-mgmt-javascript
