@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.OrderCapture
+# GeinsSdkApiMgmtJavascript.OrderCapture
 
 ## Properties
 

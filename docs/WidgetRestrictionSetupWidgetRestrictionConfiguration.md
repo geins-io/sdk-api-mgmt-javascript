@@ -1,10 +1,10 @@
-# GeinsManagementApiSdkJs.WidgetRestrictionSetupWidgetRestrictionConfiguration
+# GeinsSdkApiMgmtJavascript.WidgetRestrictionSetupWidgetRestrictionConfiguration
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**forcedResponsiveMode** | **Number** |  | [optional] 
+**forcedResponsiveMode** | **Number** |     0 &#x3D; Stack    1 &#x3D; Collapse | [optional] 
 **allowedSizes** | **[Number]** |  | [optional] 
 
 

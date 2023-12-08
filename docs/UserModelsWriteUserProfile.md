@@ -1,13 +1,11 @@
-# GeinsManagementApiSdkJs.UserModelsWriteUserProfile
+# GeinsSdkApiMgmtJavascript.UserModelsWriteUserProfile
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userId** | **Number** |  | [optional] 
 **siteId** | **Number** |  | [optional] 
 **email** | **String** |  | [optional] 
-**password** | **String** |  | [optional] 
 **firstName** | **String** |  | [optional] 
 **lastName** | **String** |  | [optional] 
 **phoneNr** | **String** |  | [optional] 
@@ -26,7 +24,8 @@ Name | Type | Description | Notes
 **country** | **String** |  | [optional] 
 **countryId** | **Number** |  | [optional] 
 **gender** | **Boolean** |  | [optional] 
+**password** | **String** |  | [optional] 
 **newsletter** | **Boolean** | Decides whether the user should be subscribed to the newsletter. | [optional] 
-**hasExternalAuth** | **Boolean** | Set this to true if the management platform will not be the main way of authentication. | [optional] 
+**metaData** | **String** | Free-text field for any additional data that should be stored with the user. | [optional] 
 
 

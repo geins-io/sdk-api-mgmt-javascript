@@ -1,6 +1,6 @@
-# GeinsManagementApiSdkJs.PaymentApi
+# GeinsSdkApiMgmtJavascript.PaymentApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,8 +17,8 @@ Query payment options
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -29,8 +29,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.PaymentApi();
-let query = new GeinsManagementApiSdkJs.PaymentModelsPaymentOptionQuery(); // PaymentModelsPaymentOptionQuery | The payment query
+let apiInstance = new GeinsSdkApiMgmtJavascript.PaymentApi();
+let query = new GeinsSdkApiMgmtJavascript.PaymentModelsPaymentOptionQuery(); // PaymentModelsPaymentOptionQuery | The payment query
 apiInstance.queryPaymentOptions(query, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -57,6 +57,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 

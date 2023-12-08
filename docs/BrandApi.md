@@ -1,13 +1,13 @@
-# GeinsManagementApiSdkJs.BrandApi
+# GeinsSdkApiMgmtJavascript.BrandApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createBrand**](BrandApi.md#createBrand) | **POST** /API/Brand | Create a new brand
-[**getBrandById**](BrandApi.md#getBrandById) | **GET** /API/Brand/{id} | Get a specific brand
+[**createBrand**](BrandApi.md#createBrand) | **POST** /API/Brand | Create brand
+[**getBrand**](BrandApi.md#getBrand) | **GET** /API/Brand/{id} | Get brand
 [**queryBrands**](BrandApi.md#queryBrands) | **POST** /API/Brand/Query | Query brands
-[**updateBrand**](BrandApi.md#updateBrand) | **PUT** /API/Brand/{id} | Updates a brand
+[**updateBrand**](BrandApi.md#updateBrand) | **PUT** /API/Brand/{id} | Update brand
 
 
 
@@ -15,13 +15,13 @@ Method | HTTP request | Description
 
 > EnvelopeBrandModelsReadBrand createBrand(brand)
 
-Create a new brand
+Create brand
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -32,8 +32,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.BrandApi();
-let brand = new GeinsManagementApiSdkJs.BrandModelsWriteBrand(); // BrandModelsWriteBrand | The brand to create.
+let apiInstance = new GeinsSdkApiMgmtJavascript.BrandApi();
+let brand = new GeinsSdkApiMgmtJavascript.BrandModelsWriteBrand(); // BrandModelsWriteBrand | The brand to create.
 apiInstance.createBrand(brand, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -60,21 +60,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## getBrandById
+## getBrand
 
-> EnvelopeBrandModelsReadBrand getBrandById(id)
+> EnvelopeBrandModelsReadBrand getBrand(id)
 
-Get a specific brand
+Get brand
+
+Gets a specific brand by id.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -85,9 +87,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.BrandApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.BrandApi();
 let id = 56; // Number | The id of the brand to get.
-apiInstance.getBrandById(id, (error, data, response) => {
+apiInstance.getBrand(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -114,7 +116,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## queryBrands
@@ -126,8 +128,8 @@ Query brands
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -138,8 +140,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.BrandApi();
-let query = new GeinsManagementApiSdkJs.BrandModelsBrandQuery(); // BrandModelsBrandQuery | The details of the query.
+let apiInstance = new GeinsSdkApiMgmtJavascript.BrandApi();
+let query = new GeinsSdkApiMgmtJavascript.BrandModelsBrandQuery(); // BrandModelsBrandQuery | The details of the brand query.
 apiInstance.queryBrands(query, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -154,7 +156,7 @@ apiInstance.queryBrands(query, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**BrandModelsBrandQuery**](BrandModelsBrandQuery.md)| The details of the query. | 
+ **query** | [**BrandModelsBrandQuery**](BrandModelsBrandQuery.md)| The details of the brand query. | 
 
 ### Return type
 
@@ -166,23 +168,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## updateBrand
 
 > EnvelopeBrandModelsReadBrand updateBrand(id, brand)
 
-Updates a brand
+Update brand
 
-Leaving out a property will ensure no changes are made to that property.  Collection properties will delete and/or add as necessary to match the supplied data.
+Leaving out a property will ensure no changes are made to that property.    Collection properties will delete and/or add as necessary to match the supplied data.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -193,9 +195,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.BrandApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.BrandApi();
 let id = 56; // Number | The id of the brand to update.
-let brand = new GeinsManagementApiSdkJs.BrandModelsWriteBrand(); // BrandModelsWriteBrand | The brand data to update.
+let brand = new GeinsSdkApiMgmtJavascript.BrandModelsWriteBrand(); // BrandModelsWriteBrand | The brand data to update.
 apiInstance.updateBrand(id, brand, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -223,6 +225,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 

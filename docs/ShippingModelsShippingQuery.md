@@ -1,14 +1,14 @@
-# GeinsManagementApiSdkJs.ShippingModelsShippingQuery
+# GeinsSdkApiMgmtJavascript.ShippingModelsShippingQuery
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**siteId** | **Number** | The site ID the delivery options belong to. Required. | [optional] 
-**countryId** | **Number** | The country ID where the order should be shipped to. | [optional] 
-**shippingId** | **Number** | Carismar Shipping Option ID | [optional] 
-**deliveryOptionId** | **String** | Unifaun Delivery Option ID | [optional] 
+**siteId** | **Number** | The site id the delivery options belong to.    Required. | [optional] 
+**countryId** | **Number** | The country id where the order should be shipped to. | [optional] 
+**shippingId** | **Number** | Geins shipping option id. | [optional] 
+**deliveryOptionId** | **String** | nShift delivery option id. | [optional] 
 **order** | [**OrderCheckoutOrder**](OrderCheckoutOrder.md) |  | [optional] 
-**minimumFreeShippingLimit** | **Number** | The cart sum limit for free shipping - to be used for conditions in the delivery checkout portal | [optional] 
+**minimumFreeShippingLimit** | **Number** | The cart sum limit for free shipping. Used for conditions in the delivery checkout portal. | [optional] 
 
 

@@ -1,28 +1,30 @@
-# GeinsManagementApiSdkJs.PageAreaApi
+# GeinsSdkApiMgmtJavascript.PageAreaApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createOrUpdateAPageArea**](PageAreaApi.md#createOrUpdateAPageArea) | **POST** /API/PageArea | Create or update a page area
-[**createOrUpdatePageAreaFamily**](PageAreaApi.md#createOrUpdatePageAreaFamily) | **POST** /API/PageAreaFamily | Create or update a page area family
-[**getPageArea**](PageAreaApi.md#getPageArea) | **GET** /API/PageArea/{name} | Get a specific page area
-[**getPageAreaFamily**](PageAreaApi.md#getPageAreaFamily) | **GET** /API/PageAreaFamily/{familyId} | Get a specific page area family
-[**listPageAreaFamilies**](PageAreaApi.md#listPageAreaFamilies) | **GET** /API/PageAreaFamily/List | Gets a list of all page area families, including nested data
+[**createUpdatePageArea**](PageAreaApi.md#createUpdatePageArea) | **POST** /API/PageArea | Create/update page area
+[**createUpdatePageAreaFamily**](PageAreaApi.md#createUpdatePageAreaFamily) | **POST** /API/PageAreaFamily | Create/update page area family
+[**getPageArea**](PageAreaApi.md#getPageArea) | **GET** /API/PageArea/{name} | Get page area
+[**getPageAreaFamily**](PageAreaApi.md#getPageAreaFamily) | **GET** /API/PageAreaFamily/{familyId} | Get page area family
+[**listPageAreaFamilies**](PageAreaApi.md#listPageAreaFamilies) | **GET** /API/PageAreaFamily/List | List page area families
 
 
 
-## createOrUpdateAPageArea
+## createUpdatePageArea
 
-> EnvelopePageAreaModelsReadPageArea createOrUpdateAPageArea(area)
+> EnvelopePageAreaModelsReadPageArea createUpdatePageArea(area)
 
-Create or update a page area
+Create/update page area
+
+Creates or updates a page area.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -33,9 +35,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.PageAreaApi();
-let area = new GeinsManagementApiSdkJs.PageAreaModelsWritePageArea(); // PageAreaModelsWritePageArea | The area model to create or update.
-apiInstance.createOrUpdateAPageArea(area, (error, data, response) => {
+let apiInstance = new GeinsSdkApiMgmtJavascript.PageAreaApi();
+let area = new GeinsSdkApiMgmtJavascript.PageAreaModelsWritePageArea(); // PageAreaModelsWritePageArea | The area model to create or update.
+apiInstance.createUpdatePageArea(area, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -61,21 +63,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## createOrUpdatePageAreaFamily
+## createUpdatePageAreaFamily
 
-> EnvelopePageAreaModelsReadPageAreaFamily createOrUpdatePageAreaFamily(family)
+> EnvelopePageAreaModelsReadPageAreaFamily createUpdatePageAreaFamily(family)
 
-Create or update a page area family
+Create/update page area family
+
+Creates or updates a page area family.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -86,9 +90,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.PageAreaApi();
-let family = new GeinsManagementApiSdkJs.PageAreaModelsWritePageAreaFamily(); // PageAreaModelsWritePageAreaFamily | The family model to create or update.
-apiInstance.createOrUpdatePageAreaFamily(family, (error, data, response) => {
+let apiInstance = new GeinsSdkApiMgmtJavascript.PageAreaApi();
+let family = new GeinsSdkApiMgmtJavascript.PageAreaModelsWritePageAreaFamily(); // PageAreaModelsWritePageAreaFamily | The family model to create or update.
+apiInstance.createUpdatePageAreaFamily(family, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -114,21 +118,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## getPageArea
 
-> PageAreaModelsReadPageArea getPageArea(name)
+> EnvelopePageAreaModelsReadPageArea getPageArea(name)
 
-Get a specific page area
+Get page area
+
+Gets a specific page area.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -139,7 +145,7 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.PageAreaApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.PageAreaApi();
 let name = "name_example"; // String | The name of the page area to get.
 apiInstance.getPageArea(name, (error, data, response) => {
   if (error) {
@@ -159,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PageAreaModelsReadPageArea**](PageAreaModelsReadPageArea.md)
+[**EnvelopePageAreaModelsReadPageArea**](EnvelopePageAreaModelsReadPageArea.md)
 
 ### Authorization
 
@@ -168,20 +174,22 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## getPageAreaFamily
 
-> PageAreaModelsReadPageAreaFamily getPageAreaFamily(familyId)
+> EnvelopePageAreaModelsReadPageAreaFamily getPageAreaFamily(familyId)
 
-Get a specific page area family
+Get page area family
+
+Gets a specific page area family.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -192,7 +200,7 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.PageAreaApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.PageAreaApi();
 let familyId = 56; // Number | The id of the page area family to get.
 apiInstance.getPageAreaFamily(familyId, (error, data, response) => {
   if (error) {
@@ -212,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PageAreaModelsReadPageAreaFamily**](PageAreaModelsReadPageAreaFamily.md)
+[**EnvelopePageAreaModelsReadPageAreaFamily**](EnvelopePageAreaModelsReadPageAreaFamily.md)
 
 ### Authorization
 
@@ -221,20 +229,22 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## listPageAreaFamilies
 
-> [PageAreaModelsReadPageAreaFamily] listPageAreaFamilies()
+> EnvelopeListPageAreaModelsReadPageAreaFamily listPageAreaFamilies()
 
-Gets a list of all page area families, including nested data
+List page area families
+
+Gets a list of all page area families, including nested data.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -245,7 +255,7 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.PageAreaApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.PageAreaApi();
 apiInstance.listPageAreaFamilies((error, data, response) => {
   if (error) {
     console.error(error);
@@ -261,7 +271,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[PageAreaModelsReadPageAreaFamily]**](PageAreaModelsReadPageAreaFamily.md)
+[**EnvelopeListPageAreaModelsReadPageAreaFamily**](EnvelopeListPageAreaModelsReadPageAreaFamily.md)
 
 ### Authorization
 
@@ -270,5 +280,5 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 

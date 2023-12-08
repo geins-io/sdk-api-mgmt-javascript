@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.BrandModelsBrandQuery
+# GeinsSdkApiMgmtJavascript.BrandModelsBrandQuery
 
 ## Properties
 

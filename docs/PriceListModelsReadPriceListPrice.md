@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.PriceListModelsReadPriceListPrice
+# GeinsSdkApiMgmtJavascript.PriceListModelsReadPriceListPrice
 
 ## Properties
 
@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **priceListName** | **String** | The name of the price list that this price is associated with. | [optional] 
 **priceIncVat** | **Number** | The price, inc VAT, in the currency of the associated price list. | [optional] 
 **priceExVat** | **Number** | The price, ex VAT, in the currency of the associated price list. | [optional] 
-**vatRate** | **Number** | The Vat Rate | [optional] 
+**vatRate** | **Number** | The VAT Rate. | [optional] 
 **country** | **String** | The 2-letter ISO country code for this price. | [optional] 
-**currency** | **String** | The 3-letter ISO 4217 currency code for this price. | [optional] 
-**staggeredCount** | **Number** | Staggered count for this price. Defaults to 1. | [optional] 
-**validFrom** | **Date** | The date the price is valid from. | [optional] 
-**validTo** | **Date** | The date the price is valid to. | [optional] 
+**currency** | **String** | The &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot;&gt;3-letter ISO 4217 currency code&lt;/a&gt; for this price. | [optional] 
+**staggeredCount** | **Number** | Staggered count for this price. Defaults to 1.    This field is ignored for prices on default (Ordinary, Sale and Campaign) price lists. | [optional] 
+**validFrom** | **Date** | The date the price is valid from.    No start boundary if null. | [optional] 
+**validTo** | **Date** | The date the price is valid to.    No end boundary if null. | [optional] 
 
 

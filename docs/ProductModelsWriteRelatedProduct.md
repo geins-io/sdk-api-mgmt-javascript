@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductModelsWriteRelatedProduct
+# GeinsSdkApiMgmtJavascript.ProductModelsWriteRelatedProduct
 
 ## Properties
 

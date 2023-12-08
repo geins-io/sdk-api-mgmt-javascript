@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.OrderProcessedCapture
+# GeinsSdkApiMgmtJavascript.OrderProcessedCapture
 
 ## Properties
 

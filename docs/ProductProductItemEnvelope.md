@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductProductItemEnvelope
+# GeinsSdkApiMgmtJavascript.ProductProductItemEnvelope
 
 ## Properties
 

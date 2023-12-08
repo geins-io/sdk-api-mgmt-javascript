@@ -1,13 +1,13 @@
-# GeinsManagementApiSdkJs.SupplierApi
+# GeinsSdkApiMgmtJavascript.SupplierApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSupplier**](SupplierApi.md#createSupplier) | **POST** /API/Supplier | Create a new supplier
-[**getSupplierById**](SupplierApi.md#getSupplierById) | **GET** /API/Supplier/{id} | Get a specific supplier
+[**createSupplier**](SupplierApi.md#createSupplier) | **POST** /API/Supplier | Create supplier
+[**getSupplier**](SupplierApi.md#getSupplier) | **GET** /API/Supplier/{id} | Get supplier
 [**querySuppliers**](SupplierApi.md#querySuppliers) | **POST** /API/Supplier/Query | Query suppliers
-[**updateSupplier**](SupplierApi.md#updateSupplier) | **PUT** /API/Supplier/{id} | Updates a supplier
+[**updateSupplier**](SupplierApi.md#updateSupplier) | **PUT** /API/Supplier/{id} | Update supplier
 
 
 
@@ -15,13 +15,15 @@ Method | HTTP request | Description
 
 > EnvelopeSupplierModelsReadSupplier createSupplier(supplier)
 
-Create a new supplier
+Create supplier
+
+Creates a new supplier.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -32,8 +34,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.SupplierApi();
-let supplier = new GeinsManagementApiSdkJs.SupplierModelsWriteSupplier(); // SupplierModelsWriteSupplier | The supplier to create.
+let apiInstance = new GeinsSdkApiMgmtJavascript.SupplierApi();
+let supplier = new GeinsSdkApiMgmtJavascript.SupplierModelsWriteSupplier(); // SupplierModelsWriteSupplier | The supplier to create.
 apiInstance.createSupplier(supplier, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -60,21 +62,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## getSupplierById
+## getSupplier
 
-> EnvelopeSupplierModelsReadSupplier getSupplierById(id)
+> EnvelopeSupplierModelsReadSupplier getSupplier(id)
 
-Get a specific supplier
+Get supplier
+
+Gets a specific supplier.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -85,9 +89,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.SupplierApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.SupplierApi();
 let id = 56; // Number | The id of the supplier to get.
-apiInstance.getSupplierById(id, (error, data, response) => {
+apiInstance.getSupplier(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -114,7 +118,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## querySuppliers
@@ -126,8 +130,8 @@ Query suppliers
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -138,8 +142,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.SupplierApi();
-let query = new GeinsManagementApiSdkJs.SupplierModelsSupplierQuery(); // SupplierModelsSupplierQuery | The details of the query
+let apiInstance = new GeinsSdkApiMgmtJavascript.SupplierApi();
+let query = new GeinsSdkApiMgmtJavascript.SupplierModelsSupplierQuery(); // SupplierModelsSupplierQuery | The details of the query
 apiInstance.querySuppliers(query, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -166,23 +170,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## updateSupplier
 
 > EnvelopeSupplierModelsReadSupplier updateSupplier(id, supplier)
 
-Updates a supplier
+Update supplier
 
-Leaving out a property will ensure no changes are made to that property.  Collection properties will delete and/or add as necessary to match the supplied data.
+Updates a supplier.    Leaving out a property will ensure no changes are made to that property.    Collection properties will delete and/or add as necessary to match the supplied data.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -193,9 +197,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.SupplierApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.SupplierApi();
 let id = 56; // Number | The id of the supplier to update.
-let supplier = new GeinsManagementApiSdkJs.SupplierModelsWriteSupplier(); // SupplierModelsWriteSupplier | The supplier data to update.
+let supplier = new GeinsSdkApiMgmtJavascript.SupplierModelsWriteSupplier(); // SupplierModelsWriteSupplier | The supplier data to update.
 apiInstance.updateSupplier(id, supplier, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -223,6 +227,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 

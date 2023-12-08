@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.OrderValidateOrderCreationRequestStockItem
+# GeinsSdkApiMgmtJavascript.OrderValidateOrderCreationRequestStockItem
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.SupplierModelsWriteSupplier
+# GeinsSdkApiMgmtJavascript.SupplierModelsWriteSupplier
 
 ## Properties
 

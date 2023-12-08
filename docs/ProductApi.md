@@ -1,43 +1,46 @@
-# GeinsManagementApiSdkJs.ProductApi
+# GeinsSdkApiMgmtJavascript.ProductApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addAvailabilityMonitor**](ProductApi.md#addAvailabilityMonitor) | **POST** /API/Product/MonitorAvailability | Add a product availability monitor
-[**addCategoryToProduct**](ProductApi.md#addCategoryToProduct) | **PUT** /API/Product/{productId}/Category | Adds a category relation to a product
-[**addImageToProduct**](ProductApi.md#addImageToProduct) | **PUT** /API/Product/{productId}/Image/{imageName} | Adds an image relation to a product
+[**addAvailabilityMonitor**](ProductApi.md#addAvailabilityMonitor) | **POST** /API/Product/MonitorAvailability | Add availability monitor
+[**addCategoryToProduct**](ProductApi.md#addCategoryToProduct) | **PUT** /API/Product/{productId}/Category | Add category to product
 [**addRelatedProductsToProduct**](ProductApi.md#addRelatedProductsToProduct) | **PUT** /API/Product/{productId}/Related | Add related products to a product
-[**batchUpdateProductItems**](ProductApi.md#batchUpdateProductItems) | **PUT** /API/Product/Items | Updates product items in batch
-[**batchUpdateStockValues**](ProductApi.md#batchUpdateStockValues) | **PUT** /API/Product/Stock | Update stock values for multiple product items
-[**createProduct**](ProductApi.md#createProduct) | **POST** /API/Product | Create a new product
-[**createProductItems**](ProductApi.md#createProductItems) | **POST** /API/Product/{productId}/Item | Create a new product item
-[**getProductById**](ProductApi.md#getProductById) | **GET** /API/Product/{productId} | Get a specific product
-[**getProductItemById**](ProductApi.md#getProductItemById) | **GET** /API/Product/Item/{itemId} | Get a specific product item
-[**linkRelatedProductsByRelationId**](ProductApi.md#linkRelatedProductsByRelationId) | **PUT** /API/Product/{productId}/Related/{relationTypeId} | Add related products to a product using a fixed relation type
-[**listAllProductItemsPaged**](ProductApi.md#listAllProductItemsPaged) | **GET** /API/Product/Items/{page} | Get all product items with pagination
-[**listFeeds**](ProductApi.md#listFeeds) | **GET** /API/Product/Feeds | Gets a list of all feeds
-[**listProductItems**](ProductApi.md#listProductItems) | **GET** /API/Product/Items | Get all product items
-[**listProductRelationTypes**](ProductApi.md#listProductRelationTypes) | **GET** /API/Product/RelationTypes | Gets a list of product relation types
+[**createProduct**](ProductApi.md#createProduct) | **POST** /API/Product | Create product
+[**createProductItem**](ProductApi.md#createProductItem) | **POST** /API/Product/{productId}/Item | Create product item
+[**deleteProduct**](ProductApi.md#deleteProduct) | **DELETE** /API/Product/{productId} | Delete product
+[**getProduct**](ProductApi.md#getProduct) | **GET** /API/Product/{productId} | Get product
+[**getProductItem**](ProductApi.md#getProductItem) | **GET** /API/Product/Item/{itemId} | Get product item
+[**linkRelatedProducts**](ProductApi.md#linkRelatedProducts) | **PUT** /API/Product/{productId}/Related/{relationTypeId} | Link related products
+[**listFeeds**](ProductApi.md#listFeeds) | **GET** /API/Product/Feeds | List feeds
+[**listProductItems**](ProductApi.md#listProductItems) | **GET** /API/Product/Items | List product items
+[**listProductItemsPaged**](ProductApi.md#listProductItemsPaged) | **GET** /API/Product/Items/{page} | List product items (paged)
+[**listProductRelationTypes**](ProductApi.md#listProductRelationTypes) | **GET** /API/Product/RelationTypes | List product relation types
 [**queryProducts**](ProductApi.md#queryProducts) | **POST** /API/Product/Query | Query products
-[**queryProductsPaged**](ProductApi.md#queryProductsPaged) | **POST** /API/Product/Query/{page} | Query products with pagination
+[**queryProductsPaged**](ProductApi.md#queryProductsPaged) | **POST** /API/Product/Query/{page} | Query products (paged)
 [**queryStock**](ProductApi.md#queryStock) | **POST** /API/Product/Stock/Query | Query stock
-[**updateProduct**](ProductApi.md#updateProduct) | **PUT** /API/Product/{productId} | Updates a product
-[**updateProductItem**](ProductApi.md#updateProductItem) | **PUT** /API/Product/Item/{itemId} | Updates a product item
+[**unlinkRelatedProductsViaRelation**](ProductApi.md#unlinkRelatedProductsViaRelation) | **PUT** /API/Product/{productId}/UnlinkRelated/{relationTypeId} | Unlink related products (via relation).
+[**updateProduct**](ProductApi.md#updateProduct) | **PUT** /API/Product/{productId} | Update product
+[**updateProductItem**](ProductApi.md#updateProductItem) | **PUT** /API/Product/Item/{itemId} | Update product item
+[**updateProductItemsBatch**](ProductApi.md#updateProductItemsBatch) | **PUT** /API/Product/Items | Update product items (batch)
+[**updateStockBatch**](ProductApi.md#updateStockBatch) | **PUT** /API/Product/Stock | Update stock (batch)
 
 
 
 ## addAvailabilityMonitor
 
-> Envelope addAvailabilityMonitor(model)
+> BaseEnvelope addAvailabilityMonitor(model)
 
-Add a product availability monitor
+Add availability monitor
+
+Adds a product availability monitor.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -48,8 +51,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let model = new GeinsManagementApiSdkJs.ProductModelsMonitorSku(); // ProductModelsMonitorSku | 
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let model = new GeinsSdkApiMgmtJavascript.ProductModelsMonitorSku(); // ProductModelsMonitorSku | 
 apiInstance.addAvailabilityMonitor(model, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -68,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Envelope**](Envelope.md)
+[**BaseEnvelope**](BaseEnvelope.md)
 
 ### Authorization
 
@@ -76,21 +79,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## addCategoryToProduct
 
-> Envelope addCategoryToProduct(productId, productCategory, opts)
+> BaseEnvelope addCategoryToProduct(productId, productCategory, opts)
 
-Adds a category relation to a product
+Add category to product
+
+Adds a category relation to a product.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -101,11 +106,11 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 let productId = "productId_example"; // String | The id of the product to update.
-let productCategory = new GeinsManagementApiSdkJs.ProductModelsProductCategory(); // ProductModelsProductCategory | The category to relate the product to.
+let productCategory = new GeinsSdkApiMgmtJavascript.ProductModelsProductCategory(); // ProductModelsProductCategory | The category to relate the product to.
 let opts = {
-  'productIdType': 56 // Number | The type of product id supplied in {productId}.
+  'productIdType': 56 // Number | The type of product id supplied.    0 = Internal. Internal product id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.
 };
 apiInstance.addCategoryToProduct(productId, productCategory, opts, (error, data, response) => {
   if (error) {
@@ -123,11 +128,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **String**| The id of the product to update. | 
  **productCategory** | [**ProductModelsProductCategory**](ProductModelsProductCategory.md)| The category to relate the product to. | 
- **productIdType** | **Number**| The type of product id supplied in {productId}. | [optional] 
+ **productIdType** | **Number**| The type of product id supplied.    0 &#x3D; Internal. Internal product id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123. | [optional] 
 
 ### Return type
 
-[**Envelope**](Envelope.md)
+[**BaseEnvelope**](BaseEnvelope.md)
 
 ### Authorization
 
@@ -135,69 +140,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-
-## addImageToProduct
-
-> Envelope addImageToProduct(productId, imageName, opts)
-
-Adds an image relation to a product
-
-### Example
-
-```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure HTTP basic authorization: basicAuth
-let basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR USERNAME';
-basicAuth.password = 'YOUR PASSWORD';
-
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let productId = "productId_example"; // String | The id of the product to update.
-let imageName = "imageName_example"; // String | The name of the image to set to product.
-let opts = {
-  'isPrimaryImage': true, // Boolean | Specifies whether {imageName} should be set as the primary image of the product.
-  'productIdType': 56 // Number | The type of product id supplied in {productId}.
-};
-apiInstance.addImageToProduct(productId, imageName, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **String**| The id of the product to update. | 
- **imageName** | **String**| The name of the image to set to product. | 
- **isPrimaryImage** | **Boolean**| Specifies whether {imageName} should be set as the primary image of the product. | [optional] 
- **productIdType** | **Number**| The type of product id supplied in {productId}. | [optional] 
-
-### Return type
-
-[**Envelope**](Envelope.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## addRelatedProductsToProduct
@@ -209,8 +153,8 @@ Add related products to a product
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -221,11 +165,11 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 let productId = "productId_example"; // String | The id of the main product to which the relations will be created
-let relatedProducts = [new GeinsManagementApiSdkJs.ProductModelsWriteRelatedProduct()]; // [ProductModelsWriteRelatedProduct] | The list of related products to link with the main product.
+let relatedProducts = [new GeinsSdkApiMgmtJavascript.ProductModelsWriteRelatedProduct()]; // [ProductModelsWriteRelatedProduct] | The list of related products to link with the main product.
 let opts = {
-  'productIdType': 56 // Number | The type of product id for {productId} and supplied in {relatedProducts}.
+  'productIdType': 56 // Number | The type of product id supplied in productId and relatedProducts.    0 = Internal. Internal product id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.
 };
 apiInstance.addRelatedProductsToProduct(productId, relatedProducts, opts, (error, data, response) => {
   if (error) {
@@ -243,7 +187,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **String**| The id of the main product to which the relations will be created | 
  **relatedProducts** | [**[ProductModelsWriteRelatedProduct]**](ProductModelsWriteRelatedProduct.md)| The list of related products to link with the main product. | 
- **productIdType** | **Number**| The type of product id for {productId} and supplied in {relatedProducts}. | [optional] 
+ **productIdType** | **Number**| The type of product id supplied in productId and relatedProducts.    0 &#x3D; Internal. Internal product id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123. | [optional] 
 
 ### Return type
 
@@ -255,135 +199,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-
-## batchUpdateProductItems
-
-> Envelope batchUpdateProductItems(productItems, opts)
-
-Updates product items in batch
-
-### Example
-
-```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure HTTP basic authorization: basicAuth
-let basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR USERNAME';
-basicAuth.password = 'YOUR PASSWORD';
-
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let productItems = [new GeinsManagementApiSdkJs.ProductModelsWriteProductItem()]; // [ProductModelsWriteProductItem] | The product items to update
-let opts = {
-  'productItemIdType': 56 // Number | The type of product item id
-};
-apiInstance.batchUpdateProductItems(productItems, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productItems** | [**[ProductModelsWriteProductItem]**](ProductModelsWriteProductItem.md)| The product items to update | 
- **productItemIdType** | **Number**| The type of product item id | [optional] 
-
-### Return type
-
-[**Envelope**](Envelope.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-
-## batchUpdateStockValues
-
-> ProductModelsStockEnvelope batchUpdateStockValues(productItemStocks, opts)
-
-Update stock values for multiple product items
-
-### Example
-
-```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure HTTP basic authorization: basicAuth
-let basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR USERNAME';
-basicAuth.password = 'YOUR PASSWORD';
-
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let productItemStocks = [new GeinsManagementApiSdkJs.ProductModelsWriteProductItemStock()]; // [ProductModelsWriteProductItemStock] | List of product item ids with new stock values.
-let opts = {
-  'productItemIdType': 56 // Number | The type of product item id supplied in {productItemStocks}.
-};
-apiInstance.batchUpdateStockValues(productItemStocks, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productItemStocks** | [**[ProductModelsWriteProductItemStock]**](ProductModelsWriteProductItemStock.md)| List of product item ids with new stock values. | 
- **productItemIdType** | **Number**| The type of product item id supplied in {productItemStocks}. | [optional] 
-
-### Return type
-
-[**ProductModelsStockEnvelope**](ProductModelsStockEnvelope.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## createProduct
 
 > EnvelopeProductModelsReadProduct createProduct(product, opts)
 
-Create a new product
+Create product
+
+Creates a new product.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -394,10 +226,10 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let product = new GeinsManagementApiSdkJs.ProductModelsWriteProduct(); // ProductModelsWriteProduct | The product to create.
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let product = new GeinsSdkApiMgmtJavascript.ProductModelsWriteProduct(); // ProductModelsWriteProduct | The product to create.
 let opts = {
-  'include': "include_example" // String | Comma separated list of child-collections to also include with the created product. See  {Product.Models.ProductIncludes} names for valid options.
+  'include': "include_example" // String | Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns
 };
 apiInstance.createProduct(product, opts, (error, data, response) => {
   if (error) {
@@ -414,7 +246,7 @@ apiInstance.createProduct(product, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product** | [**ProductModelsWriteProduct**](ProductModelsWriteProduct.md)| The product to create. | 
- **include** | **String**| Comma separated list of child-collections to also include with the created product. See  {Product.Models.ProductIncludes} names for valid options. | [optional] 
+ **include** | **String**| Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns | [optional] 
 
 ### Return type
 
@@ -426,21 +258,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## createProductItems
+## createProductItem
 
-> EnvelopeProductModelsReadProductItem createProductItems(productId, productItem, opts)
+> EnvelopeProductModelsReadProductItem createProductItem(productId, productItem, opts)
 
-Create a new product item
+Create product item
+
+Creates a new product item.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -451,13 +285,13 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 let productId = "productId_example"; // String | The id of the product to create an item on.
-let productItem = new GeinsManagementApiSdkJs.ProductModelsWriteProductItem(); // ProductModelsWriteProductItem | The product item to create.
+let productItem = new GeinsSdkApiMgmtJavascript.ProductModelsWriteProductItem(); // ProductModelsWriteProductItem | The product item to create.
 let opts = {
-  'productIdType': 56 // Number | The type of product id supplied in {productId}.
+  'productIdType': 56 // Number | The type of product id supplied.    0 = Internal. Internal product id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.
 };
-apiInstance.createProductItems(productId, productItem, opts, (error, data, response) => {
+apiInstance.createProductItem(productId, productItem, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -473,7 +307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **String**| The id of the product to create an item on. | 
  **productItem** | [**ProductModelsWriteProductItem**](ProductModelsWriteProductItem.md)| The product item to create. | 
- **productIdType** | **Number**| The type of product id supplied in {productId}. | [optional] 
+ **productIdType** | **Number**| The type of product id supplied.    0 &#x3D; Internal. Internal product id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123. | [optional] 
 
 ### Return type
 
@@ -485,21 +319,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## getProductById
+## deleteProduct
 
-> EnvelopeProductModelsReadProduct getProductById(productId, opts)
+> BaseEnvelope deleteProduct(productId, opts)
 
-Get a specific product
+Delete product
+
+Deletes a specific product.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -510,13 +346,72 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let productId = "productId_example"; // String | The id of the product to delete.
+let opts = {
+  'productIdType': 56 // Number | The type of product id supplied.    0 = Internal. Internal product id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.
+};
+apiInstance.deleteProduct(productId, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **String**| The id of the product to delete. | 
+ **productIdType** | **Number**| The type of product id supplied.    0 &#x3D; Internal. Internal product id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123. | [optional] 
+
+### Return type
+
+[**BaseEnvelope**](BaseEnvelope.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getProduct
+
+> EnvelopeProductModelsReadProduct getProduct(productId, opts)
+
+Get product
+
+Gets a specific product. Make sure to include relevant child-collections in the request.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 let productId = "productId_example"; // String | The id of the product to get.
 let opts = {
-  'productIdType': 56, // Number | The type of product id supplied in {productId}.
-  'include': "include_example" // String | Comma separated list of child-collections to also include with the requested product. See  {Product.Models.ProductIncludes} names for valid options.
+  'productIdType': 56, // Number | The type of product id supplied.    0 = Internal. Internal product id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.
+  'include': "include_example" // String | Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns
 };
-apiInstance.getProductById(productId, opts, (error, data, response) => {
+apiInstance.getProduct(productId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -531,8 +426,8 @@ apiInstance.getProductById(productId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **String**| The id of the product to get. | 
- **productIdType** | **Number**| The type of product id supplied in {productId}. | [optional] 
- **include** | **String**| Comma separated list of child-collections to also include with the requested product. See  {Product.Models.ProductIncludes} names for valid options. | [optional] 
+ **productIdType** | **Number**| The type of product id supplied.    0 &#x3D; Internal. Internal product id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123. | [optional] 
+ **include** | **String**| Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns | [optional] 
 
 ### Return type
 
@@ -545,20 +440,22 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
-## getProductItemById
+## getProductItem
 
-> ProductProductItemEnvelope getProductItemById(itemId, opts)
+> ProductProductItemEnvelope getProductItem(itemId, opts)
 
-Get a specific product item
+Get product item
+
+Gets a specific product item (SKU).
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -569,12 +466,12 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 let itemId = "itemId_example"; // String | The id of the product item to get.
 let opts = {
-  'productItemIdType': 56 // Number | The type of product item id supplied in {itemId}.
+  'productItemIdType': 56 // Number | The type of product item id supplied.    0 = Internal. Internal product item id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product item id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.    4 = ExternalId. External product item id set by customer.               Eg: 10001.
 };
-apiInstance.getProductItemById(itemId, opts, (error, data, response) => {
+apiInstance.getProductItem(itemId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -589,7 +486,7 @@ apiInstance.getProductItemById(itemId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **itemId** | **String**| The id of the product item to get. | 
- **productItemIdType** | **Number**| The type of product item id supplied in {itemId}. | [optional] 
+ **productItemIdType** | **Number**| The type of product item id supplied.    0 &#x3D; Internal. Internal product item id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product item id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.    4 &#x3D; ExternalId. External product item id set by customer.               Eg: 10001. | [optional] 
 
 ### Return type
 
@@ -602,20 +499,22 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
-## linkRelatedProductsByRelationId
+## linkRelatedProducts
 
-> ProductModelsRelatedProductEnvelope linkRelatedProductsByRelationId(productId, relationTypeId, relatedProducts, opts)
+> ProductModelsRelatedProductEnvelope linkRelatedProducts(productId, relationTypeId, relatedProducts, opts)
 
-Add related products to a product using a fixed relation type
+Link related products
+
+Add related products to a product using a fixed relation type.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -626,14 +525,14 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let productId = "productId_example"; // String | The id of the main product to which the relations will be created
-let relationTypeId = 56; // Number | The relation type id that will apply to all related products in {relatedProducts}
-let relatedProducts = [new GeinsManagementApiSdkJs.ProductModelsWriteRelatedProduct()]; // [ProductModelsWriteRelatedProduct] | The list of related products to link with the main product.
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let productId = "productId_example"; // String | The id of the main product to which the relations will be created.
+let relationTypeId = 56; // Number | The relation type id that will apply to all related products in relatedProducts.
+let relatedProducts = [new GeinsSdkApiMgmtJavascript.ProductModelsWriteRelatedProduct()]; // [ProductModelsWriteRelatedProduct] | The list of related products to link with the main product.
 let opts = {
-  'productIdType': 56 // Number | The type of product id for {productId} and supplied in {relatedProducts}.
+  'productIdType': 56 // Number | The type of product id supplied in productId and relatedProducts.    0 = Internal. Internal product id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.
 };
-apiInstance.linkRelatedProductsByRelationId(productId, relationTypeId, relatedProducts, opts, (error, data, response) => {
+apiInstance.linkRelatedProducts(productId, relationTypeId, relatedProducts, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -647,10 +546,10 @@ apiInstance.linkRelatedProductsByRelationId(productId, relationTypeId, relatedPr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **String**| The id of the main product to which the relations will be created | 
- **relationTypeId** | **Number**| The relation type id that will apply to all related products in {relatedProducts} | 
+ **productId** | **String**| The id of the main product to which the relations will be created. | 
+ **relationTypeId** | **Number**| The relation type id that will apply to all related products in relatedProducts. | 
  **relatedProducts** | [**[ProductModelsWriteRelatedProduct]**](ProductModelsWriteRelatedProduct.md)| The list of related products to link with the main product. | 
- **productIdType** | **Number**| The type of product id for {productId} and supplied in {relatedProducts}. | [optional] 
+ **productIdType** | **Number**| The type of product id supplied in productId and relatedProducts.    0 &#x3D; Internal. Internal product id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123. | [optional] 
 
 ### Return type
 
@@ -662,74 +561,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-
-## listAllProductItemsPaged
-
-> EnvelopeListProductModelsReadProductItem listAllProductItemsPaged(page)
-
-Get all product items with pagination
-
-### Example
-
-```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure HTTP basic authorization: basicAuth
-let basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR USERNAME';
-basicAuth.password = 'YOUR PASSWORD';
-
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let page = 56; // Number | The page to fetch
-apiInstance.listAllProductItemsPaged(page, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Number**| The page to fetch | 
-
-### Return type
-
-[**EnvelopeListProductModelsReadProductItem**](EnvelopeListProductModelsReadProductItem.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## listFeeds
 
 > EnvelopeListProductModelsReadFeed listFeeds()
 
-Gets a list of all feeds
+List feeds
+
+Gets a list of all feeds.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -740,7 +588,7 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 apiInstance.listFeeds((error, data, response) => {
   if (error) {
     console.error(error);
@@ -765,20 +613,22 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## listProductItems
 
 > [ProductModelsReadProductItem] listProductItems()
 
-Get all product items
+List product items
+
+Gets all product items.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -789,7 +639,7 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 apiInstance.listProductItems((error, data, response) => {
   if (error) {
     console.error(error);
@@ -814,20 +664,22 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
-## listProductRelationTypes
+## listProductItemsPaged
 
-> EnvelopeListProductModelsReadRelationType listProductRelationTypes()
+> EnvelopeListProductModelsReadProductItem listProductItemsPaged(page)
 
-Gets a list of product relation types
+List product items (paged)
+
+Gets all product items with pagination.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -838,7 +690,62 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let page = 56; // Number | The page to fetch.
+apiInstance.listProductItemsPaged(page, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| The page to fetch. | 
+
+### Return type
+
+[**EnvelopeListProductModelsReadProductItem**](EnvelopeListProductModelsReadProductItem.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## listProductRelationTypes
+
+> EnvelopeListProductModelsReadRelationType listProductRelationTypes()
+
+List product relation types
+
+Gets a list of product relation types
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 apiInstance.listProductRelationTypes((error, data, response) => {
   if (error) {
     console.error(error);
@@ -863,20 +770,20 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## queryProducts
 
-> EnvelopeListProductModelsReadProduct queryProducts(query, opts)
+> PagedEnvelopeListProductModelsReadProduct queryProducts(query, opts)
 
 Query products
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -887,10 +794,10 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let query = new GeinsManagementApiSdkJs.ProductModelsProductQuery(); // ProductModelsProductQuery | The details of the query
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let query = new GeinsSdkApiMgmtJavascript.ProductModelsProductQuery(); // ProductModelsProductQuery | The details of the query.
 let opts = {
-  'include': "include_example" // String | Comma separated list of child-collections to also include with the queried products. See  {Product.Models.ProductIncludes} names for valid options.
+  'include': "include_example" // String | Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns
 };
 apiInstance.queryProducts(query, opts, (error, data, response) => {
   if (error) {
@@ -906,12 +813,12 @@ apiInstance.queryProducts(query, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**ProductModelsProductQuery**](ProductModelsProductQuery.md)| The details of the query | 
- **include** | **String**| Comma separated list of child-collections to also include with the queried products. See  {Product.Models.ProductIncludes} names for valid options. | [optional] 
+ **query** | [**ProductModelsProductQuery**](ProductModelsProductQuery.md)| The details of the query. | 
+ **include** | **String**| Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns | [optional] 
 
 ### Return type
 
-[**EnvelopeListProductModelsReadProduct**](EnvelopeListProductModelsReadProduct.md)
+[**PagedEnvelopeListProductModelsReadProduct**](PagedEnvelopeListProductModelsReadProduct.md)
 
 ### Authorization
 
@@ -919,23 +826,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## queryProductsPaged
 
-> EnvelopeListProductModelsReadProduct queryProductsPaged(page, query, opts)
+> PagedEnvelopeListProductModelsReadProduct queryProductsPaged(page, query, opts)
 
-Query products with pagination
+Query products (paged)
 
-The {Product.Models.ProductQuery.BatchId} property is mandatory when fetching a page other than the first page.  If no BatchId is provided for the first page, a new batch is created and the BatchId can be found in the {Envelope.PageResult} field.
+The batch id is mandatory when fetching any page other than the first page.    If no batch id is provided for the first page, then a new batch is created.    Batch id and pagination information can be found in the response.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -946,11 +853,11 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let page = 56; // Number | The page to fetch. To start a new batched query it is mandatory to send in page=1
-let query = new GeinsManagementApiSdkJs.ProductModelsProductQuery(); // ProductModelsProductQuery | The details of the query
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let page = 56; // Number | The page to fetch. To start a new batched query it is mandatory to send in page=1.
+let query = new GeinsSdkApiMgmtJavascript.ProductModelsProductQuery(); // ProductModelsProductQuery | The details of the query.
 let opts = {
-  'include': "include_example" // String | Comma separated list of child-collections to also include with the queried products. See  {Product.Models.ProductIncludes} names for valid options.
+  'include': "include_example" // String | Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns
 };
 apiInstance.queryProductsPaged(page, query, opts, (error, data, response) => {
   if (error) {
@@ -966,13 +873,13 @@ apiInstance.queryProductsPaged(page, query, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Number**| The page to fetch. To start a new batched query it is mandatory to send in page&#x3D;1 | 
- **query** | [**ProductModelsProductQuery**](ProductModelsProductQuery.md)| The details of the query | 
- **include** | **String**| Comma separated list of child-collections to also include with the queried products. See  {Product.Models.ProductIncludes} names for valid options. | [optional] 
+ **page** | **Number**| The page to fetch. To start a new batched query it is mandatory to send in page&#x3D;1. | 
+ **query** | [**ProductModelsProductQuery**](ProductModelsProductQuery.md)| The details of the query. | 
+ **include** | **String**| Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns | [optional] 
 
 ### Return type
 
-[**EnvelopeListProductModelsReadProduct**](EnvelopeListProductModelsReadProduct.md)
+[**PagedEnvelopeListProductModelsReadProduct**](PagedEnvelopeListProductModelsReadProduct.md)
 
 ### Authorization
 
@@ -980,21 +887,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## queryStock
 
-> [ProductModelsReadProductItemStock] queryStock(productItemIds)
+> EnvelopeListProductModelsReadProductItemStock queryStock(productItemIds)
 
 Query stock
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -1005,7 +912,7 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 let productItemIds = [null]; // [Number] | The details of the query.
 apiInstance.queryStock(productItemIds, (error, data, response) => {
   if (error) {
@@ -1025,7 +932,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ProductModelsReadProductItemStock]**](ProductModelsReadProductItemStock.md)
+[**EnvelopeListProductModelsReadProductItemStock**](EnvelopeListProductModelsReadProductItemStock.md)
 
 ### Authorization
 
@@ -1033,21 +940,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## updateProduct
+## unlinkRelatedProductsViaRelation
 
-> EnvelopeProductModelsReadProduct updateProduct(productId, product, opts)
+> ProductModelsRelatedProductEnvelope unlinkRelatedProductsViaRelation(productId, relationTypeId, relatedProducts, opts)
 
-Updates a product
+Unlink related products (via relation).
+
+Remove related products from a product using a fixed relation type.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -1058,12 +967,75 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
-let productId = "productId_example"; // String | The id of the product to update.
-let product = new GeinsManagementApiSdkJs.ProductModelsWriteProduct(); // ProductModelsWriteProduct | The product data to update.
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let productId = "productId_example"; // String | The id of the main product from which the relations will be removed.
+let relationTypeId = 56; // Number | The relation type id that will apply to all related products in relatedProducts.
+let relatedProducts = [new GeinsSdkApiMgmtJavascript.ProductModelsWriteRelatedProduct()]; // [ProductModelsWriteRelatedProduct] | The list of related products to unlink from the main product.
 let opts = {
-  'productIdType': 56, // Number | The type of product id supplied in {productId}.
-  'include': "include_example" // String | Comma separated list of child-collections to also include with the updated product. See  {Product.Models.ProductIncludes} names for valid options.
+  'productIdType': 56 // Number | The type of product id supplied in productId and relatedProducts.    0 = Internal. Internal product id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.
+};
+apiInstance.unlinkRelatedProductsViaRelation(productId, relationTypeId, relatedProducts, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **String**| The id of the main product from which the relations will be removed. | 
+ **relationTypeId** | **Number**| The relation type id that will apply to all related products in relatedProducts. | 
+ **relatedProducts** | [**[ProductModelsWriteRelatedProduct]**](ProductModelsWriteRelatedProduct.md)| The list of related products to unlink from the main product. | 
+ **productIdType** | **Number**| The type of product id supplied in productId and relatedProducts.    0 &#x3D; Internal. Internal product id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123. | [optional] 
+
+### Return type
+
+[**ProductModelsRelatedProductEnvelope**](ProductModelsRelatedProductEnvelope.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateProduct
+
+> EnvelopeProductModelsReadProduct updateProduct(productId, product, opts)
+
+Update product
+
+Updates a product.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let productId = "productId_example"; // String | The id of the product to update.
+let product = new GeinsSdkApiMgmtJavascript.ProductModelsWriteProduct(); // ProductModelsWriteProduct | The product data to update.
+let opts = {
+  'productIdType': 56, // Number | The type of product id supplied.    0 = Internal. Internal product id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.
+  'include': "include_example" // String | Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns
 };
 apiInstance.updateProduct(productId, product, opts, (error, data, response) => {
   if (error) {
@@ -1081,8 +1053,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **String**| The id of the product to update. | 
  **product** | [**ProductModelsWriteProduct**](ProductModelsWriteProduct.md)| The product data to update. | 
- **productIdType** | **Number**| The type of product id supplied in {productId}. | [optional] 
- **include** | **String**| Comma separated list of child-collections to also include with the updated product. See  {Product.Models.ProductIncludes} names for valid options. | [optional] 
+ **productIdType** | **Number**| The type of product id supplied.    0 &#x3D; Internal. Internal product id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123. | [optional] 
+ **include** | **String**| Set to empty string to only include basic product data or null to not include any product data.    Valid options:    Names, ShortTexts, LongTexts, TechTexts, Items, Prices, Categories, Parameters, Variants, Markets, Images, Feeds, Urls, ShippingFees, RelatedProducts, DiscountCampaigns | [optional] 
 
 ### Return type
 
@@ -1094,21 +1066,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## updateProductItem
 
 > EnvelopeProductModelsReadProductItem updateProductItem(itemId, productItem, opts)
 
-Updates a product item
+Update product item
+
+Updates a product item.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -1119,11 +1093,11 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ProductApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
 let itemId = "itemId_example"; // String | The id of the product item to update.
-let productItem = new GeinsManagementApiSdkJs.ProductModelsWriteProductItem(); // ProductModelsWriteProductItem | The product item data to update.
+let productItem = new GeinsSdkApiMgmtJavascript.ProductModelsWriteProductItem(); // ProductModelsWriteProductItem | The product item data to update.
 let opts = {
-  'productItemIdType': 56 // Number | The type of product item id supplied in {itemId}.
+  'productItemIdType': 56 // Number | The type of product item id supplied.    0 = Internal. Internal product item id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product item id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.    4 = ExternalId. External product item id set by customer.               Eg: 10001.
 };
 apiInstance.updateProductItem(itemId, productItem, opts, (error, data, response) => {
   if (error) {
@@ -1141,7 +1115,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **itemId** | **String**| The id of the product item to update. | 
  **productItem** | [**ProductModelsWriteProductItem**](ProductModelsWriteProductItem.md)| The product item data to update. | 
- **productItemIdType** | **Number**| The type of product item id supplied in {itemId}. | [optional] 
+ **productItemIdType** | **Number**| The type of product item id supplied.    0 &#x3D; Internal. Internal product item id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product item id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.    4 &#x3D; ExternalId. External product item id set by customer.               Eg: 10001. | [optional] 
 
 ### Return type
 
@@ -1153,6 +1127,124 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateProductItemsBatch
+
+> EnvelopeProductModelsReadProductItemResult updateProductItemsBatch(productItems, opts)
+
+Update product items (batch)
+
+Updates product items in batch.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let productItems = [new GeinsSdkApiMgmtJavascript.ProductModelsWriteProductItem()]; // [ProductModelsWriteProductItem] | The product items to update.
+let opts = {
+  'productItemIdType': 56 // Number | The type of product item ids supplied.    0 = Internal. Internal product item id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product item id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.    4 = ExternalId. External product item id set by customer.               Eg: 10001.
+};
+apiInstance.updateProductItemsBatch(productItems, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productItems** | [**[ProductModelsWriteProductItem]**](ProductModelsWriteProductItem.md)| The product items to update. | 
+ **productItemIdType** | **Number**| The type of product item ids supplied.    0 &#x3D; Internal. Internal product item id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product item id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.    4 &#x3D; ExternalId. External product item id set by customer.               Eg: 10001. | [optional] 
+
+### Return type
+
+[**EnvelopeProductModelsReadProductItemResult**](EnvelopeProductModelsReadProductItemResult.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateStockBatch
+
+> ProductModelsStockEnvelope updateStockBatch(productItemStocks, opts)
+
+Update stock (batch)
+
+Update stock values for multiple product items.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.ProductApi();
+let productItemStocks = [new GeinsSdkApiMgmtJavascript.ProductModelsWriteProductItemStock()]; // [ProductModelsWriteProductItemStock] | List of product item ids with new stock values.
+let opts = {
+  'productItemIdType': 56 // Number | The type of product item id supplied.    0 = Internal. Internal product item id set by Geins.               Eg: 10001.    1 = ArticleNumber. Article number set by customer.               Eg: ABC123.    2 = MarketPrefixedInternal. Internal product item id set by Geins, prefixed with market.               Eg: SE10001.    3 = MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.    4 = ExternalId. External product item id set by customer.               Eg: 10001.
+};
+apiInstance.updateStockBatch(productItemStocks, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productItemStocks** | [**[ProductModelsWriteProductItemStock]**](ProductModelsWriteProductItemStock.md)| List of product item ids with new stock values. | 
+ **productItemIdType** | **Number**| The type of product item id supplied.    0 &#x3D; Internal. Internal product item id set by Geins.               Eg: 10001.    1 &#x3D; ArticleNumber. Article number set by customer.               Eg: ABC123.    2 &#x3D; MarketPrefixedInternal. Internal product item id set by Geins, prefixed with market.               Eg: SE10001.    3 &#x3D; MarketPrefixedArticleNumber. Article number set by customer, prefixed with market.               Eg: SEABC123.    4 &#x3D; ExternalId. External product item id set by customer.               Eg: 10001. | [optional] 
+
+### Return type
+
+[**ProductModelsStockEnvelope**](ProductModelsStockEnvelope.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 

@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductModelsMonitorSku
+# GeinsSdkApiMgmtJavascript.ProductModelsMonitorSku
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.PageAreaModelsReadPageWidgetContainer
+# GeinsSdkApiMgmtJavascript.PageAreaModelsReadPageWidgetContainer
 
 ## Properties
 

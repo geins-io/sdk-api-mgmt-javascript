@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.APIOrderTransactionData
+# GeinsSdkApiMgmtJavascript.APIOrderTransactionData
 
 ## Properties
 

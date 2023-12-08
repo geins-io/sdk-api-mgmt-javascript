@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductModelsReadFeedMembership
+# GeinsSdkApiMgmtJavascript.ProductModelsReadFeedMembership
 
 ## Properties
 

@@ -1,25 +1,25 @@
-# GeinsManagementApiSdkJs.MarketApi
+# GeinsSdkApiMgmtJavascript.MarketApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getMarketById**](MarketApi.md#getMarketById) | **GET** /API/Market/{marketId} | Get a specific market
-[**listMarkets**](MarketApi.md#listMarkets) | **GET** /API/Market/List | Gets a list of all markets
+[**getMarket**](MarketApi.md#getMarket) | **GET** /API/Market/{marketId} | Get market
+[**listMarkets**](MarketApi.md#listMarkets) | **GET** /API/Market/List | List markets
 
 
 
-## getMarketById
+## getMarket
 
-> EnvelopeMarketModelsMarket getMarketById(marketId, opts)
+> EnvelopeMarketModelsMarket getMarket(marketId, opts)
 
-Get a specific market
+Get market
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -30,12 +30,12 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.MarketApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.MarketApi();
 let marketId = "marketId_example"; // String | The id of the market to get.
 let opts = {
-  'marketIdType': 56 // Number | The type of market id supplied. See {Market.Models.MarketIdType} for valid options.
+  'marketIdType': 56 // Number | The type of market id supplied.    0 = Internal. Internal market id set by Geins.    1 = Name. The name of the market.
 };
-apiInstance.getMarketById(marketId, opts, (error, data, response) => {
+apiInstance.getMarket(marketId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -50,7 +50,7 @@ apiInstance.getMarketById(marketId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketId** | **String**| The id of the market to get. | 
- **marketIdType** | **Number**| The type of market id supplied. See {Market.Models.MarketIdType} for valid options. | [optional] 
+ **marketIdType** | **Number**| The type of market id supplied.    0 &#x3D; Internal. Internal market id set by Geins.    1 &#x3D; Name. The name of the market. | [optional] 
 
 ### Return type
 
@@ -63,20 +63,22 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## listMarkets
 
-> MarketModelsMarket listMarkets()
+> [MarketModelsMarket] listMarkets()
+
+List markets
 
 Gets a list of all markets
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -87,7 +89,7 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.MarketApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.MarketApi();
 apiInstance.listMarkets((error, data, response) => {
   if (error) {
     console.error(error);
@@ -103,7 +105,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**MarketModelsMarket**](MarketModelsMarket.md)
+[**[MarketModelsMarket]**](MarketModelsMarket.md)
 
 ### Authorization
 
@@ -112,5 +114,5 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 

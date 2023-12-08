@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductModelsReadProduct
+# GeinsSdkApiMgmtJavascript.ProductModelsReadProduct
 
 ## Properties
 
@@ -9,9 +9,10 @@ Name | Type | Description | Notes
 **names** | [**[SharedModelsLocalizableContent]**](SharedModelsLocalizableContent.md) | The localized names of the product. | [optional] 
 **dateCreated** | **Date** | The date the product was created. | [optional] 
 **dateUpdated** | **Date** | The date the product was last updated. | [optional] 
+**dateFirstAvailable** | **Date** | The date the product was first available. | [optional] 
 **active** | **Boolean** | The current state of the product. | [optional] 
-**purchasePrice** | **Number** | The purchase price in the currency defined in {Product.Models.Read.Product.PurchasePriceCurrency}. | [optional] 
-**purchasePriceCurrency** | **String** | The 3-letter ISO 4217 currency code for the amount given in {Product.Models.Read.Product.PurchasePrice}. | [optional] 
+**purchasePrice** | **Number** | The purchase price in the currency defined in PurchasePriceCurrency. | [optional] 
+**purchasePriceCurrency** | **String** | The &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot;&gt;3-letter ISO 4217 currency code&lt;/a&gt; for the amount given in PurchasePrice. | [optional] 
 **shortTexts** | [**[SharedModelsLocalizableContent]**](SharedModelsLocalizableContent.md) | Localized short texts for the product. | [optional] 
 **longTexts** | [**[SharedModelsLocalizableContent]**](SharedModelsLocalizableContent.md) | Localized long texts for the product. | [optional] 
 **techTexts** | [**[SharedModelsLocalizableContent]**](SharedModelsLocalizableContent.md) | Localized tech texts for the product. | [optional] 
@@ -28,16 +29,17 @@ Name | Type | Description | Notes
 **markets** | [**[MarketModelsMarket]**](MarketModelsMarket.md) | The markets for this product | [optional] 
 **vat** | **Number** | The vat percent for this product. Eg) 0.25 meaning 25% VAT. | [optional] 
 **primaryImage** | **String** | The filename of this products primary image. | [optional] 
-**freightClassId** | **Number** | ID of freight class | [optional] 
-**intrastatCode** | **String** | Intrastat code of the product | [optional] 
-**countryOfOrigin** | **String** | Country of orgin of product | [optional] 
-**variantGroupId** | **Number** | ID of Variant Group to which the product is associated | [optional] 
-**vatId** | **Number** | ID of Vat | [optional] 
+**freightClassId** | **Number** | Id of freight class. | [optional] 
+**intrastatCode** | **String** | Intrastat code of the product. | [optional] 
+**countryOfOrigin** | **String** | Country of orgin of product. | [optional] 
+**variantGroupId** | **Number** | Id of Variant Group to which the product is associated. | [optional] 
+**vatId** | **Number** | Id of VAT. | [optional] 
 **externalId** | **String** | External Id of the product. | [optional] 
 **activationDate** | **Date** | Activation date for the product. | [optional] 
-**feeds** | [**[ProductModelsReadFeedMembership]**](ProductModelsReadFeedMembership.md) | The feeds the product is a member of | [optional] 
-**urls** | [**[ProductModelsReadProductUrl]**](ProductModelsReadProductUrl.md) | All canonical urls for the product | [optional] 
+**feeds** | [**[ProductModelsReadFeedMembership]**](ProductModelsReadFeedMembership.md) | The feeds the product is a member of. | [optional] 
+**urls** | [**[ProductModelsReadProductUrl]**](ProductModelsReadProductUrl.md) | All canonical urls for the product. | [optional] 
 **mainCategoryId** | **Number** | The main category id for the product. | [optional] 
 **relatedProducts** | [**[ProductModelsReadRelatedProduct]**](ProductModelsReadRelatedProduct.md) | The related products for the product. | [optional] 
+**discountCampaigns** | [**[ProductModelsReadDiscountCampaign]**](ProductModelsReadDiscountCampaign.md) | The discount campaigns for the product. | [optional] 
 
 

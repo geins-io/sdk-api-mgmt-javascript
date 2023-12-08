@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.OrderCheckoutOrder
+# GeinsSdkApiMgmtJavascript.OrderCheckoutOrder
 
 ## Properties
 
@@ -23,11 +23,12 @@ Name | Type | Description | Notes
 **campaignNames** | **[String]** |  | [optional] 
 **customerId** | **Number** |  | [optional] 
 **customerTypeId** | **Number** |  | [optional] 
-**gender** | **Number** |  | [optional] 
+**gender** | **Number** |     0 &#x3D; Unknown    1 &#x3D; Female    2 &#x3D; Male | [optional] 
 **dateOfBirth** | **Date** |  | [optional] 
 **personalId** | **String** |  | [optional] 
 **userAgent** | **String** |  | [optional] 
 **metaData** | **{String: String}** |  | [optional] 
+**memberId** | **Number** |  | [optional] 
 **paymentId** | **Number** |  | [optional] 
 **transactionId** | **String** |  | [optional] 
 **secondaryTransactionId** | **String** |  | [optional] 
@@ -63,6 +64,9 @@ Name | Type | Description | Notes
 **pickupPoint** | **String** |  | [optional] 
 **desiredDeliveryDate** | **Date** |  | [optional] 
 **freightClass** | [**OrderFreightClass**](OrderFreightClass.md) |  | [optional] 
+**freeShippingLimit** | **Number** |  | [optional] 
+**freeShippingFromLimit** | **Boolean** |  | [optional] 
+**freeShippingFromCampaign** | **Boolean** |  | [optional] 
 **sum** | **Number** |  | [optional] [readonly] 
 **expectedSum** | **Number** |  | [optional] 
 **orderValueIncVat** | **Number** |  | [optional] [readonly] 

@@ -1,25 +1,30 @@
-# GeinsManagementApiSdkJs.ShippingApi
+# GeinsSdkApiMgmtJavascript.ShippingApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createParcelGroup**](ShippingApi.md#createParcelGroup) | **POST** /API/Shipping/ParcelGroup | Create a new parcel group
+[**captureParcelGroup**](ShippingApi.md#captureParcelGroup) | **PUT** /API/Shipping/ParcelGroup/{parcelGroupId}/Capture | Capture parcel group
+[**createParcelGroup**](ShippingApi.md#createParcelGroup) | **POST** /API/Shipping/ParcelGroup | Create parcel group
+[**deliverParcelGroup**](ShippingApi.md#deliverParcelGroup) | **PUT** /API/Shipping/ParcelGroup/{parcelGroupId}/Deliver | Deliver parcel group
+[**queryParcelGroups**](ShippingApi.md#queryParcelGroups) | **POST** /API/Shipping/ParcelGroup/Query | Query parcel groups
 [**queryShippingOptions**](ShippingApi.md#queryShippingOptions) | **POST** /API/Shipping/Query | Query shipping options
 
 
 
-## createParcelGroup
+## captureParcelGroup
 
-> EnvelopeInt createParcelGroup(parcelGroupOptions)
+> BaseEnvelope captureParcelGroup(parcelGroupId)
 
-Create a new parcel group
+Capture parcel group
+
+Creates captures for a parcel group and signals capture events for them.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -30,8 +35,63 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ShippingApi();
-let parcelGroupOptions = new GeinsManagementApiSdkJs.ShippingModelsParcelGroupOptions(); // ShippingModelsParcelGroupOptions | Options for the new parcel group.
+let apiInstance = new GeinsSdkApiMgmtJavascript.ShippingApi();
+let parcelGroupId = 56; // Number | The id of the parcel group to capture.
+apiInstance.captureParcelGroup(parcelGroupId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **parcelGroupId** | **Number**| The id of the parcel group to capture. | 
+
+### Return type
+
+[**BaseEnvelope**](BaseEnvelope.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## createParcelGroup
+
+> EnvelopeInt createParcelGroup(parcelGroupOptions)
+
+Create parcel group
+
+Creates a new parcel group.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.ShippingApi();
+let parcelGroupOptions = new GeinsSdkApiMgmtJavascript.ShippingModelsParcelGroupOptions(); // ShippingModelsParcelGroupOptions | Options for the new parcel group.
 apiInstance.createParcelGroup(parcelGroupOptions, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -58,23 +118,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## queryShippingOptions
+## deliverParcelGroup
 
-> [ShippingModelsShippingOption] queryShippingOptions(shippingQuery)
+> BaseEnvelope deliverParcelGroup(parcelGroupId, opts)
 
-Query shipping options
+Deliver parcel group
 
-No response envelope.
+Marks a parcel group as delivered. Does not signal capture events.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -85,8 +145,120 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.ShippingApi();
-let shippingQuery = new GeinsManagementApiSdkJs.ShippingModelsShippingQuery(); // ShippingModelsShippingQuery | The query to filter shipping options by.
+let apiInstance = new GeinsSdkApiMgmtJavascript.ShippingApi();
+let parcelGroupId = 56; // Number | The id of the parcel group to deliver.
+let opts = {
+  'sendDeliveryEmail': true // Boolean | Set to true to also send delivery email.
+};
+apiInstance.deliverParcelGroup(parcelGroupId, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **parcelGroupId** | **Number**| The id of the parcel group to deliver. | 
+ **sendDeliveryEmail** | **Boolean**| Set to true to also send delivery email. | [optional] 
+
+### Return type
+
+[**BaseEnvelope**](BaseEnvelope.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## queryParcelGroups
+
+> EnvelopeListShippingModelsReadParcelGroup queryParcelGroups(parcelGroupQuery)
+
+Query parcel groups
+
+Queries parcel groups.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.ShippingApi();
+let parcelGroupQuery = new GeinsSdkApiMgmtJavascript.ShippingModelsParcelGroupQuery(); // ShippingModelsParcelGroupQuery | 
+apiInstance.queryParcelGroups(parcelGroupQuery, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **parcelGroupQuery** | [**ShippingModelsParcelGroupQuery**](ShippingModelsParcelGroupQuery.md)|  | 
+
+### Return type
+
+[**EnvelopeListShippingModelsReadParcelGroup**](EnvelopeListShippingModelsReadParcelGroup.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## queryShippingOptions
+
+> [ShippingModelsShippingOption] queryShippingOptions(shippingQuery)
+
+Query shipping options
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.ShippingApi();
+let shippingQuery = new GeinsSdkApiMgmtJavascript.ShippingModelsShippingQuery(); // ShippingModelsShippingQuery | The query to filter shipping options by.
 apiInstance.queryShippingOptions(shippingQuery, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -113,6 +285,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 

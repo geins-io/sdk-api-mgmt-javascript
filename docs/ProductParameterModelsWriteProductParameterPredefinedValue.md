@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductParameterModelsWriteProductParameterPredefinedValue
+# GeinsSdkApiMgmtJavascript.ProductParameterModelsWriteProductParameterPredefinedValue
 
 ## Properties
 

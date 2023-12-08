@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.PageWidgetLazyLoadSetupLazyLoadCollectionConfiguration
+# GeinsSdkApiMgmtJavascript.PageWidgetLazyLoadSetupLazyLoadCollectionConfiguration
 
 ## Properties
 

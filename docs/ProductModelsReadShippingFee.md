@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductModelsReadShippingFee
+# GeinsSdkApiMgmtJavascript.ProductModelsReadShippingFee
 
 ## Properties
 

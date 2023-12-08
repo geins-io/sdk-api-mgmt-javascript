@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductParameterModelsWriteProductParameterGroup
+# GeinsSdkApiMgmtJavascript.ProductParameterModelsWriteProductParameterGroup
 
 ## Properties
 

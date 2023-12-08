@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.VariantModelsWriteVariant
+# GeinsSdkApiMgmtJavascript.VariantModelsWriteVariant
 
 ## Properties
 

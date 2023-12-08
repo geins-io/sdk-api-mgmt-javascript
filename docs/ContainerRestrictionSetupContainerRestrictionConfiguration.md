@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ContainerRestrictionSetupContainerRestrictionConfiguration
+# GeinsSdkApiMgmtJavascript.ContainerRestrictionSetupContainerRestrictionConfiguration
 
 ## Properties
 

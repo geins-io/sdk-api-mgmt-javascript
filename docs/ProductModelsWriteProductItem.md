@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductModelsWriteProductItem
+# GeinsSdkApiMgmtJavascript.ProductModelsWriteProductItem
 
 ## Properties
 
@@ -12,8 +12,9 @@ Name | Type | Description | Notes
 **length** | **Number** | The length of the item in millimeters (mm). | [optional] 
 **width** | **Number** | The width of the item in millimeters (mm). | [optional] 
 **height** | **Number** | The height of the item in millimeters (mm). | [optional] 
-**gtin** | **String** | The GTIN number for the item. | [optional] 
+**gtin** | **String** | The &lt;a href&#x3D;\&quot;http://www.gtin.info/\&quot;&gt;GTIN number&lt;/a&gt; for the item.    Also known as EAN, UCC or UPS number. | [optional] 
 **active** | **Boolean** | The current state of the item. | [optional] 
 **externalId** | **String** | External Id of the product item. | [optional] 
+**dateIncoming** | **Date** | The date the item will be in stock again. | [optional] 
 
 

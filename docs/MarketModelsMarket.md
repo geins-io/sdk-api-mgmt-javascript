@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.MarketModelsMarket
+# GeinsSdkApiMgmtJavascript.MarketModelsMarket
 
 ## Properties
 

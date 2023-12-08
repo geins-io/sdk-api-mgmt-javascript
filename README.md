@@ -54,231 +54,305 @@ api.createBrand(brand, callback);
 
 ```
 
-## Documentation for API Endpoints
+## API Endpoints
 
-
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*GeinsManagementApiSdkJs.BrandApi* | [**createBrand**](docs/BrandApi.md#createBrand) | **POST** /API/Brand | Create a new brand
-*GeinsManagementApiSdkJs.BrandApi* | [**getBrandById**](docs/BrandApi.md#getBrandById) | **GET** /API/Brand/{id} | Get a specific brand
-*GeinsManagementApiSdkJs.BrandApi* | [**queryBrands**](docs/BrandApi.md#queryBrands) | **POST** /API/Brand/Query | Query brands
-*GeinsManagementApiSdkJs.BrandApi* | [**updateBrand**](docs/BrandApi.md#updateBrand) | **PUT** /API/Brand/{id} | Updates a brand
-*GeinsManagementApiSdkJs.CategoryApi* | [**createCategory**](docs/CategoryApi.md#createCategory) | **POST** /API/Category | Create a new category
-*GeinsManagementApiSdkJs.CategoryApi* | [**getCategoryById**](docs/CategoryApi.md#getCategoryById) | **GET** /API/Category/{id} | Get a specific category
-*GeinsManagementApiSdkJs.CategoryApi* | [**queryCategories**](docs/CategoryApi.md#queryCategories) | **POST** /API/Category/Query | Query categories
-*GeinsManagementApiSdkJs.CategoryApi* | [**updateCategory**](docs/CategoryApi.md#updateCategory) | **PUT** /API/Category/{id} | Update a category
-*GeinsManagementApiSdkJs.MarketApi* | [**getMarketById**](docs/MarketApi.md#getMarketById) | **GET** /API/Market/{marketId} | Get a specific market
-*GeinsManagementApiSdkJs.MarketApi* | [**listMarkets**](docs/MarketApi.md#listMarkets) | **GET** /API/Market/List | Gets a list of all markets
-*GeinsManagementApiSdkJs.OrderApi* | [**addCommentToOrder**](docs/OrderApi.md#addCommentToOrder) | **POST** /API/Order/{id}/Comment | Adds a comment to the order
-*GeinsManagementApiSdkJs.OrderApi* | [**createOrder**](docs/OrderApi.md#createOrder) | **POST** /API/Order | Post a new order
-*GeinsManagementApiSdkJs.OrderApi* | [**createOrderId**](docs/OrderApi.md#createOrderId) | **POST** /API/Order/Id | Create a new order id
-*GeinsManagementApiSdkJs.OrderApi* | [**deleteOrder**](docs/OrderApi.md#deleteOrder) | **DELETE** /API/Order/{id} | Deletes or deactivates an order
-*GeinsManagementApiSdkJs.OrderApi* | [**getCaptureById**](docs/OrderApi.md#getCaptureById) | **GET** /API/Order/Capture/{captureId} | Get Capture by Id
-*GeinsManagementApiSdkJs.OrderApi* | [**getOrderById**](docs/OrderApi.md#getOrderById) | **GET** /API/Order/{id}/{include} | Get an instance of a order
-*GeinsManagementApiSdkJs.OrderApi* | [**getOrderStatuses**](docs/OrderApi.md#getOrderStatuses) | **GET** /API/Order/Statuses | Get a list of available order statuses
-*GeinsManagementApiSdkJs.OrderApi* | [**getRefundById**](docs/OrderApi.md#getRefundById) | **GET** /API/Order/Refund/{refundId} | Get Refund by Id
-*GeinsManagementApiSdkJs.OrderApi* | [**partialUpdateOfOrder**](docs/OrderApi.md#partialUpdateOfOrder) | **PATCH** /API/Order/{id} | Partial update of an order
-*GeinsManagementApiSdkJs.OrderApi* | [**queryOrders**](docs/OrderApi.md#queryOrders) | **POST** /API/Order/Query | Query the order repository
-*GeinsManagementApiSdkJs.OrderApi* | [**setCaptureAsProcessed**](docs/OrderApi.md#setCaptureAsProcessed) | **POST** /API/Order/Capture/SetAsProcessed | Set a capture as processed (&#x3D; captured)
-*GeinsManagementApiSdkJs.OrderApi* | [**setPaymentAsPayed**](docs/OrderApi.md#setPaymentAsPayed) | **POST** /API/Order/PaymentDetail/{paymentDetailId}/SetAsPayed | Set Payment Detail as payed
-*GeinsManagementApiSdkJs.OrderApi* | [**setRefundAsProcessed**](docs/OrderApi.md#setRefundAsProcessed) | **POST** /API/Order/Refund/SetAsProcessed | Set a refund as processed (&#x3D; settled)
-*GeinsManagementApiSdkJs.OrderApi* | [**updateOrderStatus**](docs/OrderApi.md#updateOrderStatus) | **POST** /API/Order/{id}/Status/{status}/{transactionId}/{secondaryTransactionId} | Update order status
-*GeinsManagementApiSdkJs.OrderApi* | [**updateTransactionData**](docs/OrderApi.md#updateTransactionData) | **POST** /API/Order/{id}/TransactionData | Updates transaction data on an order
-*GeinsManagementApiSdkJs.OrderApi* | [**validateOrder**](docs/OrderApi.md#validateOrder) | **POST** /API/Order/ValidateCreation | Validates order data for order creation.
-*GeinsManagementApiSdkJs.PageAreaApi* | [**createOrUpdateAPageArea**](docs/PageAreaApi.md#createOrUpdateAPageArea) | **POST** /API/PageArea | Create or update a page area
-*GeinsManagementApiSdkJs.PageAreaApi* | [**createOrUpdatePageAreaFamily**](docs/PageAreaApi.md#createOrUpdatePageAreaFamily) | **POST** /API/PageAreaFamily | Create or update a page area family
-*GeinsManagementApiSdkJs.PageAreaApi* | [**getPageArea**](docs/PageAreaApi.md#getPageArea) | **GET** /API/PageArea/{name} | Get a specific page area
-*GeinsManagementApiSdkJs.PageAreaApi* | [**getPageAreaFamily**](docs/PageAreaApi.md#getPageAreaFamily) | **GET** /API/PageAreaFamily/{familyId} | Get a specific page area family
-*GeinsManagementApiSdkJs.PageAreaApi* | [**listPageAreaFamilies**](docs/PageAreaApi.md#listPageAreaFamilies) | **GET** /API/PageAreaFamily/List | Gets a list of all page area families, including nested data
-*GeinsManagementApiSdkJs.PaymentApi* | [**queryPaymentOptions**](docs/PaymentApi.md#queryPaymentOptions) | **POST** /API/Payment/Query | Query payment options
-*GeinsManagementApiSdkJs.PriceListApi* | [**listPriceLists**](docs/PriceListApi.md#listPriceLists) | **GET** /API/PriceList/List | Get all price list definitions
-*GeinsManagementApiSdkJs.PriceListApi* | [**updatePricelistPrices**](docs/PriceListApi.md#updatePricelistPrices) | **PUT** /API/PriceList/Price | Updates price list prices
-*GeinsManagementApiSdkJs.ProductApi* | [**addAvailabilityMonitor**](docs/ProductApi.md#addAvailabilityMonitor) | **POST** /API/Product/MonitorAvailability | Add a product availability monitor
-*GeinsManagementApiSdkJs.ProductApi* | [**addCategoryToProduct**](docs/ProductApi.md#addCategoryToProduct) | **PUT** /API/Product/{productId}/Category | Adds a category relation to a product
-*GeinsManagementApiSdkJs.ProductApi* | [**addImageToProduct**](docs/ProductApi.md#addImageToProduct) | **PUT** /API/Product/{productId}/Image/{imageName} | Adds an image relation to a product
-*GeinsManagementApiSdkJs.ProductApi* | [**addRelatedProductsToProduct**](docs/ProductApi.md#addRelatedProductsToProduct) | **PUT** /API/Product/{productId}/Related | Add related products to a product
-*GeinsManagementApiSdkJs.ProductApi* | [**batchUpdateProductItems**](docs/ProductApi.md#batchUpdateProductItems) | **PUT** /API/Product/Items | Updates product items in batch
-*GeinsManagementApiSdkJs.ProductApi* | [**batchUpdateStockValues**](docs/ProductApi.md#batchUpdateStockValues) | **PUT** /API/Product/Stock | Update stock values for multiple product items
-*GeinsManagementApiSdkJs.ProductApi* | [**createProduct**](docs/ProductApi.md#createProduct) | **POST** /API/Product | Create a new product
-*GeinsManagementApiSdkJs.ProductApi* | [**createProductItems**](docs/ProductApi.md#createProductItems) | **POST** /API/Product/{productId}/Item | Create a new product item
-*GeinsManagementApiSdkJs.ProductApi* | [**getProductById**](docs/ProductApi.md#getProductById) | **GET** /API/Product/{productId} | Get a specific product
-*GeinsManagementApiSdkJs.ProductApi* | [**getProductItemById**](docs/ProductApi.md#getProductItemById) | **GET** /API/Product/Item/{itemId} | Get a specific product item
-*GeinsManagementApiSdkJs.ProductApi* | [**linkRelatedProductsByRelationId**](docs/ProductApi.md#linkRelatedProductsByRelationId) | **PUT** /API/Product/{productId}/Related/{relationTypeId} | Add related products to a product using a fixed relation type
-*GeinsManagementApiSdkJs.ProductApi* | [**listAllProductItemsPaged**](docs/ProductApi.md#listAllProductItemsPaged) | **GET** /API/Product/Items/{page} | Get all product items with pagination
-*GeinsManagementApiSdkJs.ProductApi* | [**listFeeds**](docs/ProductApi.md#listFeeds) | **GET** /API/Product/Feeds | Gets a list of all feeds
-*GeinsManagementApiSdkJs.ProductApi* | [**listProductItems**](docs/ProductApi.md#listProductItems) | **GET** /API/Product/Items | Get all product items
-*GeinsManagementApiSdkJs.ProductApi* | [**listProductRelationTypes**](docs/ProductApi.md#listProductRelationTypes) | **GET** /API/Product/RelationTypes | Gets a list of product relation types
-*GeinsManagementApiSdkJs.ProductApi* | [**queryProducts**](docs/ProductApi.md#queryProducts) | **POST** /API/Product/Query | Query products
-*GeinsManagementApiSdkJs.ProductApi* | [**queryProductsPaged**](docs/ProductApi.md#queryProductsPaged) | **POST** /API/Product/Query/{page} | Query products with pagination
-*GeinsManagementApiSdkJs.ProductApi* | [**queryStock**](docs/ProductApi.md#queryStock) | **POST** /API/Product/Stock/Query | Query stock
-*GeinsManagementApiSdkJs.ProductApi* | [**updateProduct**](docs/ProductApi.md#updateProduct) | **PUT** /API/Product/{productId} | Updates a product
-*GeinsManagementApiSdkJs.ProductApi* | [**updateProductItem**](docs/ProductApi.md#updateProductItem) | **PUT** /API/Product/Item/{itemId} | Updates a product item
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**batchReplaceProductParameterValues**](docs/ProductParameterApi.md#batchReplaceProductParameterValues) | **POST** /API/ProductParameter/Values | Replace multiple product parameter values
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**batchUpdateProductParameterValues**](docs/ProductParameterApi.md#batchUpdateProductParameterValues) | **PUT** /API/ProductParameter/Values | Update multiple product parameter values
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**createOrUpdateProductParameterValue**](docs/ProductParameterApi.md#createOrUpdateProductParameterValue) | **POST** /API/ProductParameter/Value | Create or update a new product parameter value
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**createProductParameter**](docs/ProductParameterApi.md#createProductParameter) | **POST** /API/ProductParameter | Create a new product parameter
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**createProductParameterGroup**](docs/ProductParameterApi.md#createProductParameterGroup) | **POST** /API/ProductParameter/Group | Create a new product parameter group
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**createProductParameterPredefinedValue**](docs/ProductParameterApi.md#createProductParameterPredefinedValue) | **POST** /API/ProductParameter/PredefinedValue | Create a new predefined value for a product parameter
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**getProductParameterById**](docs/ProductParameterApi.md#getProductParameterById) | **GET** /API/ProductParameter/{id} | Get a specific product parameter
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**getProductParameterGroupById**](docs/ProductParameterApi.md#getProductParameterGroupById) | **GET** /API/ProductParameter/Group/{id} | Get a specific product parameter group
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**getProductParameterPredefinedValue**](docs/ProductParameterApi.md#getProductParameterPredefinedValue) | **GET** /API/ProductParameter/PredefinedValue/{id} | Get a specific predefined value for a product parameter
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**getProductParameterValue**](docs/ProductParameterApi.md#getProductParameterValue) | **GET** /API/ProductParameter/Value/{id} | Get a specific product parameter value
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**updateProductParameter**](docs/ProductParameterApi.md#updateProductParameter) | **PUT** /API/ProductParameter/{id} | Updates a product parameter
-*GeinsManagementApiSdkJs.ProductParameterApi* | [**updateProductParameterGroup**](docs/ProductParameterApi.md#updateProductParameterGroup) | **PUT** /API/ProductParameter/Group/{id} | Update a product parameter group
-*GeinsManagementApiSdkJs.ShippingApi* | [**createParcelGroup**](docs/ShippingApi.md#createParcelGroup) | **POST** /API/Shipping/ParcelGroup | Create a new parcel group
-*GeinsManagementApiSdkJs.ShippingApi* | [**queryShippingOptions**](docs/ShippingApi.md#queryShippingOptions) | **POST** /API/Shipping/Query | Query shipping options
-*GeinsManagementApiSdkJs.SupplierApi* | [**createSupplier**](docs/SupplierApi.md#createSupplier) | **POST** /API/Supplier | Create a new supplier
-*GeinsManagementApiSdkJs.SupplierApi* | [**getSupplierById**](docs/SupplierApi.md#getSupplierById) | **GET** /API/Supplier/{id} | Get a specific supplier
-*GeinsManagementApiSdkJs.SupplierApi* | [**querySuppliers**](docs/SupplierApi.md#querySuppliers) | **POST** /API/Supplier/Query | Query suppliers
-*GeinsManagementApiSdkJs.SupplierApi* | [**updateSupplier**](docs/SupplierApi.md#updateSupplier) | **PUT** /API/Supplier/{id} | Updates a supplier
-*GeinsManagementApiSdkJs.UserApi* | [**createUserProfile**](docs/UserApi.md#createUserProfile) | **POST** /API/User | Create user profile
-*GeinsManagementApiSdkJs.UserApi* | [**deleteUserProfile**](docs/UserApi.md#deleteUserProfile) | **DELETE** /API/User/email | Delete user profile
-*GeinsManagementApiSdkJs.UserApi* | [**getUserProfile**](docs/UserApi.md#getUserProfile) | **POST** /API/User/Query | Get a specific user profile
-*GeinsManagementApiSdkJs.UserApi* | [**updateUserProfile**](docs/UserApi.md#updateUserProfile) | **PUT** /API/User | Update user profile
-*GeinsManagementApiSdkJs.VariantApi* | [**addProductToVariantGroup**](docs/VariantApi.md#addProductToVariantGroup) | **PUT** /API/VariantGroup/{groupId}/{productId} | Adds a product to an existing group
-*GeinsManagementApiSdkJs.VariantApi* | [**addProductToVariantGroupByProductId**](docs/VariantApi.md#addProductToVariantGroupByProductId) | **PUT** /API/Variant/{productId1}/{productId2} | Adds a product to an existing group
-*GeinsManagementApiSdkJs.VariantApi* | [**createVariantGroup**](docs/VariantApi.md#createVariantGroup) | **POST** /API/VariantGroup | Create a new variant group
-*GeinsManagementApiSdkJs.VariantApi* | [**createVariantGroupWithProduct**](docs/VariantApi.md#createVariantGroupWithProduct) | **POST** /API/Variant/{productId}/VariantGroup | Create a new group for the provided product id
-*GeinsManagementApiSdkJs.VariantApi* | [**deleteVariantGroup**](docs/VariantApi.md#deleteVariantGroup) | **DELETE** /API/VariantGroup/{groupId} | Delete an entire variant group
-*GeinsManagementApiSdkJs.VariantApi* | [**deleteVariantGroupByProductId**](docs/VariantApi.md#deleteVariantGroupByProductId) | **DELETE** /API/Variant/{productId}/VariantGroup | Delete an entire variant group
-*GeinsManagementApiSdkJs.VariantApi* | [**getVariantGroup**](docs/VariantApi.md#getVariantGroup) | **GET** /API/VariantGroup/{groupId} | Get a specific variant group
-*GeinsManagementApiSdkJs.VariantApi* | [**getVariantGroupByProductId**](docs/VariantApi.md#getVariantGroupByProductId) | **GET** /API/Variant/{productId}/VariantGroup | Get the variant group for the provided id
-*GeinsManagementApiSdkJs.VariantApi* | [**getVariantLabels**](docs/VariantApi.md#getVariantLabels) | **GET** /API/Variant/Labels | Get all valid variant labels
-*GeinsManagementApiSdkJs.VariantApi* | [**removeProductFromVariantGroup**](docs/VariantApi.md#removeProductFromVariantGroup) | **DELETE** /API/Variant/{productId} | Remove a product from its variant group
-*GeinsManagementApiSdkJs.VariantApi* | [**updateVariant**](docs/VariantApi.md#updateVariant) | **PUT** /API/Variant/{productId} | Adds the variant details for the product with the provided ID
-*GeinsManagementApiSdkJs.VariantApi* | [**updateVariantGroup**](docs/VariantApi.md#updateVariantGroup) | **PUT** /API/VariantGroup/{groupId} | Updates the settings of a group
+*GeinsSdkApiMgmtJavascript.BrandApi* | [**createBrand**](docs/BrandApi.md#createBrand) | **POST** /API/Brand | Create brand
+*GeinsSdkApiMgmtJavascript.BrandApi* | [**getBrand**](docs/BrandApi.md#getBrand) | **GET** /API/Brand/{id} | Get brand
+*GeinsSdkApiMgmtJavascript.BrandApi* | [**queryBrands**](docs/BrandApi.md#queryBrands) | **POST** /API/Brand/Query | Query brands
+*GeinsSdkApiMgmtJavascript.BrandApi* | [**updateBrand**](docs/BrandApi.md#updateBrand) | **PUT** /API/Brand/{id} | Update brand
+*GeinsSdkApiMgmtJavascript.CategoryApi* | [**createCategory**](docs/CategoryApi.md#createCategory) | **POST** /API/Category | Create category
+*GeinsSdkApiMgmtJavascript.CategoryApi* | [**getCategory**](docs/CategoryApi.md#getCategory) | **GET** /API/Category/{id} | Get category
+*GeinsSdkApiMgmtJavascript.CategoryApi* | [**queryCategories**](docs/CategoryApi.md#queryCategories) | **POST** /API/Category/Query | Query categories
+*GeinsSdkApiMgmtJavascript.CategoryApi* | [**updateCategory**](docs/CategoryApi.md#updateCategory) | **PUT** /API/Category/{id} | Update category
+*GeinsSdkApiMgmtJavascript.MarketApi* | [**getMarket**](docs/MarketApi.md#getMarket) | **GET** /API/Market/{marketId} | Get market
+*GeinsSdkApiMgmtJavascript.MarketApi* | [**listMarkets**](docs/MarketApi.md#listMarkets) | **GET** /API/Market/List | List markets
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**addOrderComment**](docs/OrderApi.md#addOrderComment) | **POST** /API/Order/{id}/Comment | Add order comment
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**cancelOrderRow**](docs/OrderApi.md#cancelOrderRow) | **DELETE** /API/Order/{orderId}/OrderRow/{orderRowId} | Cancel order row
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**countOrders**](docs/OrderApi.md#countOrders) | **GET** /API/Order/Count/{email} | Count orders
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**createOrder**](docs/OrderApi.md#createOrder) | **POST** /API/Order | Create order
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**createOrderId**](docs/OrderApi.md#createOrderId) | **POST** /API/Order/Id | Create order id
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**deleteOrder**](docs/OrderApi.md#deleteOrder) | **DELETE** /API/Order/{id} | Delete order
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**getCapture**](docs/OrderApi.md#getCapture) | **GET** /API/Order/Capture/{captureId} | Get capture
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**getOrderId**](docs/OrderApi.md#getOrderId) | **GET** /API/Order/{id}/{include} | Get order (id)
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**getOrderPublicId**](docs/OrderApi.md#getOrderPublicId) | **GET** /API/OrderByPublicId/{publicId}/{include} | Get order (public id)
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**getOrderStatuses**](docs/OrderApi.md#getOrderStatuses) | **GET** /API/Order/Statuses | Get order statuses
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**partialUpdateOfOrder**](docs/OrderApi.md#partialUpdateOfOrder) | **PATCH** /API/Order/{id} | Partial update of an order
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**queryOrders**](docs/OrderApi.md#queryOrders) | **POST** /API/Order/Query | Query orders
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**setCaptureAsProcessed**](docs/OrderApi.md#setCaptureAsProcessed) | **POST** /API/Order/Capture/SetAsProcessed | Set capture as processed
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**setPaymentAsPaid**](docs/OrderApi.md#setPaymentAsPaid) | **POST** /API/Order/PaymentDetail/{paymentDetailId}/SetAsPaid | Set payment as paid
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**updateOrderStatus**](docs/OrderApi.md#updateOrderStatus) | **POST** /API/Order/{id}/Status/{status}/{transactionId}/{secondaryTransactionId} | Update order status
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**updateTransactionData**](docs/OrderApi.md#updateTransactionData) | **POST** /API/Order/{id}/TransactionData | Update transaction data
+*GeinsSdkApiMgmtJavascript.OrderApi* | [**validateOrder**](docs/OrderApi.md#validateOrder) | **POST** /API/Order/ValidateCreation | Validate order
+*GeinsSdkApiMgmtJavascript.PageAreaApi* | [**createUpdatePageArea**](docs/PageAreaApi.md#createUpdatePageArea) | **POST** /API/PageArea | Create/update page area
+*GeinsSdkApiMgmtJavascript.PageAreaApi* | [**createUpdatePageAreaFamily**](docs/PageAreaApi.md#createUpdatePageAreaFamily) | **POST** /API/PageAreaFamily | Create/update page area family
+*GeinsSdkApiMgmtJavascript.PageAreaApi* | [**getPageArea**](docs/PageAreaApi.md#getPageArea) | **GET** /API/PageArea/{name} | Get page area
+*GeinsSdkApiMgmtJavascript.PageAreaApi* | [**getPageAreaFamily**](docs/PageAreaApi.md#getPageAreaFamily) | **GET** /API/PageAreaFamily/{familyId} | Get page area family
+*GeinsSdkApiMgmtJavascript.PageAreaApi* | [**listPageAreaFamilies**](docs/PageAreaApi.md#listPageAreaFamilies) | **GET** /API/PageAreaFamily/List | List page area families
+*GeinsSdkApiMgmtJavascript.PaymentApi* | [**queryPaymentOptions**](docs/PaymentApi.md#queryPaymentOptions) | **POST** /API/Payment/Query | Query payment options
+*GeinsSdkApiMgmtJavascript.PriceListApi* | [**listPriceLists**](docs/PriceListApi.md#listPriceLists) | **GET** /API/PriceList/List | List price lists
+*GeinsSdkApiMgmtJavascript.PriceListApi* | [**updatePriceListPrices**](docs/PriceListApi.md#updatePriceListPrices) | **PUT** /API/PriceList/Price | Update price list prices
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**addAvailabilityMonitor**](docs/ProductApi.md#addAvailabilityMonitor) | **POST** /API/Product/MonitorAvailability | Add availability monitor
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**addCategoryToProduct**](docs/ProductApi.md#addCategoryToProduct) | **PUT** /API/Product/{productId}/Category | Add category to product
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**addRelatedProductsToProduct**](docs/ProductApi.md#addRelatedProductsToProduct) | **PUT** /API/Product/{productId}/Related | Add related products to a product
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**createProduct**](docs/ProductApi.md#createProduct) | **POST** /API/Product | Create product
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**createProductItem**](docs/ProductApi.md#createProductItem) | **POST** /API/Product/{productId}/Item | Create product item
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**deleteProduct**](docs/ProductApi.md#deleteProduct) | **DELETE** /API/Product/{productId} | Delete product
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**getProduct**](docs/ProductApi.md#getProduct) | **GET** /API/Product/{productId} | Get product
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**getProductItem**](docs/ProductApi.md#getProductItem) | **GET** /API/Product/Item/{itemId} | Get product item
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**linkRelatedProducts**](docs/ProductApi.md#linkRelatedProducts) | **PUT** /API/Product/{productId}/Related/{relationTypeId} | Link related products
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**listFeeds**](docs/ProductApi.md#listFeeds) | **GET** /API/Product/Feeds | List feeds
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**listProductItems**](docs/ProductApi.md#listProductItems) | **GET** /API/Product/Items | List product items
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**listProductItemsPaged**](docs/ProductApi.md#listProductItemsPaged) | **GET** /API/Product/Items/{page} | List product items (paged)
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**listProductRelationTypes**](docs/ProductApi.md#listProductRelationTypes) | **GET** /API/Product/RelationTypes | List product relation types
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**queryProducts**](docs/ProductApi.md#queryProducts) | **POST** /API/Product/Query | Query products
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**queryProductsPaged**](docs/ProductApi.md#queryProductsPaged) | **POST** /API/Product/Query/{page} | Query products (paged)
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**queryStock**](docs/ProductApi.md#queryStock) | **POST** /API/Product/Stock/Query | Query stock
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**unlinkRelatedProductsViaRelation**](docs/ProductApi.md#unlinkRelatedProductsViaRelation) | **PUT** /API/Product/{productId}/UnlinkRelated/{relationTypeId} | Unlink related products (via relation).
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**updateProduct**](docs/ProductApi.md#updateProduct) | **PUT** /API/Product/{productId} | Update product
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**updateProductItem**](docs/ProductApi.md#updateProductItem) | **PUT** /API/Product/Item/{itemId} | Update product item
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**updateProductItemsBatch**](docs/ProductApi.md#updateProductItemsBatch) | **PUT** /API/Product/Items | Update product items (batch)
+*GeinsSdkApiMgmtJavascript.ProductApi* | [**updateStockBatch**](docs/ProductApi.md#updateStockBatch) | **PUT** /API/Product/Stock | Update stock (batch)
+*GeinsSdkApiMgmtJavascript.ProductImageApi* | [**addProductImage**](docs/ProductImageApi.md#addProductImage) | **POST** /API/Product/{productId}/Image/{imageName} | Add product image
+*GeinsSdkApiMgmtJavascript.ProductImageApi* | [**addUpdateProductImage**](docs/ProductImageApi.md#addUpdateProductImage) | **PUT** /API/Product/{productId}/Image/{imageName} | Add/update product image
+*GeinsSdkApiMgmtJavascript.ProductImageApi* | [**deleteProductImage**](docs/ProductImageApi.md#deleteProductImage) | **DELETE** /API/Product/{productId}/Image/{imageName} | Delete product image
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**createOrUpdateProductParameterValue**](docs/ProductParameterApi.md#createOrUpdateProductParameterValue) | **POST** /API/ProductParameter/Value | Create/update product parameter value
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**createProductParameter**](docs/ProductParameterApi.md#createProductParameter) | **POST** /API/ProductParameter | Create product parameter
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**createProductParameterGroup**](docs/ProductParameterApi.md#createProductParameterGroup) | **POST** /API/ProductParameter/Group | Create product parameter group
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**createProductParameterPredefinedValue**](docs/ProductParameterApi.md#createProductParameterPredefinedValue) | **POST** /API/ProductParameter/PredefinedValue | Create product parameter predefined value
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**getProductParameter**](docs/ProductParameterApi.md#getProductParameter) | **GET** /API/ProductParameter/{id} | Get product parameter
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**getProductParameterGroup**](docs/ProductParameterApi.md#getProductParameterGroup) | **GET** /API/ProductParameter/Group/{id} | Get product parameter group
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**getProductParameterPredefinedValue**](docs/ProductParameterApi.md#getProductParameterPredefinedValue) | **GET** /API/ProductParameter/PredefinedValue/{id} | Get product parameter predefined value
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**getProductParameterValue**](docs/ProductParameterApi.md#getProductParameterValue) | **GET** /API/ProductParameter/Value/{id} | Get product parameter value
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**replaceProductParameterValuesBatch**](docs/ProductParameterApi.md#replaceProductParameterValuesBatch) | **POST** /API/ProductParameter/Values | Replace product parameter values (batch)
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**updateProductParameter**](docs/ProductParameterApi.md#updateProductParameter) | **PUT** /API/ProductParameter/{id} | Update product parameter
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**updateProductParameterGroup**](docs/ProductParameterApi.md#updateProductParameterGroup) | **PUT** /API/ProductParameter/Group/{id} | Update product parameter group
+*GeinsSdkApiMgmtJavascript.ProductParameterApi* | [**updateProductParameterValuesBatch**](docs/ProductParameterApi.md#updateProductParameterValuesBatch) | **PUT** /API/ProductParameter/Values | Update product parameter values (batch)
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**createRefund**](docs/RefundApi.md#createRefund) | **POST** /API/Order/{orderId}/Refund | Creates refund
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**deleteRefundRow**](docs/RefundApi.md#deleteRefundRow) | **DELETE** /API/Order/{orderId}/Refund/{refundId}/RefundRow/{refundRowId} | Delete refund row
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**getRefund**](docs/RefundApi.md#getRefund) | **GET** /API/Order/{orderId}/Refund/{refundId} | Get refund
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**listRefunds**](docs/RefundApi.md#listRefunds) | **GET** /API/Order/{orderId}/Refund/List | List refunds
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**queryRefunds**](docs/RefundApi.md#queryRefunds) | **POST** /API/Refund/Query | Query refunds
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**setRefundApproval**](docs/RefundApi.md#setRefundApproval) | **POST** /API/Order/{orderId}/Refund/{refundId}/SetApproval | Set refund approval
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**setRefundAsProcessed**](docs/RefundApi.md#setRefundAsProcessed) | **POST** /API/Order/{orderId}/Refund/{refundId}/SetAsProcessed | Set refund as processed
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**setRefundAsSettled**](docs/RefundApi.md#setRefundAsSettled) | **POST** /API/Order/{orderId}/Refund/{refundId}/SetAsSettled | Set refund as settled
+*GeinsSdkApiMgmtJavascript.RefundApi* | [**setRefundRowAsSettled**](docs/RefundApi.md#setRefundRowAsSettled) | **POST** /API/Order/{orderId}/Refund/{refundId}/RefundRow/{refundRowId}/SetAsSettled | Set refund row as settled
+*GeinsSdkApiMgmtJavascript.ReturnApi* | [**createReturn**](docs/ReturnApi.md#createReturn) | **POST** /API/Order/{orderId}/Return | Create return
+*GeinsSdkApiMgmtJavascript.ReturnApi* | [**getReturn**](docs/ReturnApi.md#getReturn) | **GET** /API/Order/{orderId}/Return/{returnId} | Get return
+*GeinsSdkApiMgmtJavascript.ReturnApi* | [**listReturnCodes**](docs/ReturnApi.md#listReturnCodes) | **GET** /API/ReturnCode/List | List return codes
+*GeinsSdkApiMgmtJavascript.ReturnApi* | [**listReturns**](docs/ReturnApi.md#listReturns) | **GET** /API/Order/{orderId}/Return/List | List returns
+*GeinsSdkApiMgmtJavascript.ShippingApi* | [**captureParcelGroup**](docs/ShippingApi.md#captureParcelGroup) | **PUT** /API/Shipping/ParcelGroup/{parcelGroupId}/Capture | Capture parcel group
+*GeinsSdkApiMgmtJavascript.ShippingApi* | [**createParcelGroup**](docs/ShippingApi.md#createParcelGroup) | **POST** /API/Shipping/ParcelGroup | Create parcel group
+*GeinsSdkApiMgmtJavascript.ShippingApi* | [**deliverParcelGroup**](docs/ShippingApi.md#deliverParcelGroup) | **PUT** /API/Shipping/ParcelGroup/{parcelGroupId}/Deliver | Deliver parcel group
+*GeinsSdkApiMgmtJavascript.ShippingApi* | [**queryParcelGroups**](docs/ShippingApi.md#queryParcelGroups) | **POST** /API/Shipping/ParcelGroup/Query | Query parcel groups
+*GeinsSdkApiMgmtJavascript.ShippingApi* | [**queryShippingOptions**](docs/ShippingApi.md#queryShippingOptions) | **POST** /API/Shipping/Query | Query shipping options
+*GeinsSdkApiMgmtJavascript.SupplierApi* | [**createSupplier**](docs/SupplierApi.md#createSupplier) | **POST** /API/Supplier | Create supplier
+*GeinsSdkApiMgmtJavascript.SupplierApi* | [**getSupplier**](docs/SupplierApi.md#getSupplier) | **GET** /API/Supplier/{id} | Get supplier
+*GeinsSdkApiMgmtJavascript.SupplierApi* | [**querySuppliers**](docs/SupplierApi.md#querySuppliers) | **POST** /API/Supplier/Query | Query suppliers
+*GeinsSdkApiMgmtJavascript.SupplierApi* | [**updateSupplier**](docs/SupplierApi.md#updateSupplier) | **PUT** /API/Supplier/{id} | Update supplier
+*GeinsSdkApiMgmtJavascript.UserApi* | [**addUserBalance**](docs/UserApi.md#addUserBalance) | **POST** /API/User/{userId}/Balance | Add user balance
+*GeinsSdkApiMgmtJavascript.UserApi* | [**createUserProfile**](docs/UserApi.md#createUserProfile) | **POST** /API/User | Create user profile
+*GeinsSdkApiMgmtJavascript.UserApi* | [**deleteUserProfileEmail**](docs/UserApi.md#deleteUserProfileEmail) | **DELETE** /API/User/{email} | Delete user profile (email)
+*GeinsSdkApiMgmtJavascript.UserApi* | [**deleteUserProfileId**](docs/UserApi.md#deleteUserProfileId) | **DELETE** /API/User/{userId} | Delete user profile (id)
+*GeinsSdkApiMgmtJavascript.UserApi* | [**getUserBalance**](docs/UserApi.md#getUserBalance) | **GET** /API/User/{userId}/Balance/{currency} | Get user balance
+*GeinsSdkApiMgmtJavascript.UserApi* | [**getUserBalanceTransactions**](docs/UserApi.md#getUserBalanceTransactions) | **GET** /API/User/{userId}/BalanceTransaction/List/{currency} | Get user balance transactions
+*GeinsSdkApiMgmtJavascript.UserApi* | [**getUserBalanceTypes**](docs/UserApi.md#getUserBalanceTypes) | **GET** /API/BalanceType/List | Get user balance types
+*GeinsSdkApiMgmtJavascript.UserApi* | [**getUserProfileEmail**](docs/UserApi.md#getUserProfileEmail) | **GET** /API/User/{email} | Get user profile (email)
+*GeinsSdkApiMgmtJavascript.UserApi* | [**getUserProfileId**](docs/UserApi.md#getUserProfileId) | **GET** /API/User/{userId} | Get user profile (id)
+*GeinsSdkApiMgmtJavascript.UserApi* | [**queryUserProfiles**](docs/UserApi.md#queryUserProfiles) | **POST** /API/User/Query/{page} | Query user profiles
+*GeinsSdkApiMgmtJavascript.UserApi* | [**updateUserProfile**](docs/UserApi.md#updateUserProfile) | **PATCH** /API/User/{userId} | Update user profile
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**addProductToVariantGroup**](docs/VariantApi.md#addProductToVariantGroup) | **PUT** /API/VariantGroup/{groupId}/{productId} | Add product to variant group
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**addProductToVariantGroupProduct**](docs/VariantApi.md#addProductToVariantGroupProduct) | **PUT** /API/Variant/{productId1}/{productId2} | Add product to variant group (product)
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**createVariantGroup**](docs/VariantApi.md#createVariantGroup) | **POST** /API/VariantGroup | Create variant group
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**createVariantGroupProduct**](docs/VariantApi.md#createVariantGroupProduct) | **POST** /API/Variant/{productId}/VariantGroup | Create variant group (product)
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**deleteVariantGroupGroupId**](docs/VariantApi.md#deleteVariantGroupGroupId) | **DELETE** /API/VariantGroup/{groupId} | Delete variant group (group id)
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**deleteVariantGroupProductId**](docs/VariantApi.md#deleteVariantGroupProductId) | **DELETE** /API/Variant/{productId}/VariantGroup | Delete variant group (product id)
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**getVariantGroupGroupId**](docs/VariantApi.md#getVariantGroupGroupId) | **GET** /API/VariantGroup/{groupId} | Get variant group (group id)
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**getVariantGroupProductId**](docs/VariantApi.md#getVariantGroupProductId) | **GET** /API/Variant/{productId}/VariantGroup | Get variant group (product id)
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**getVariantLabels**](docs/VariantApi.md#getVariantLabels) | **GET** /API/Variant/Labels | Get variant labels
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**removeProductFromVariantGroup**](docs/VariantApi.md#removeProductFromVariantGroup) | **DELETE** /API/Variant/{productId} | Remove product from variant group
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**updateVariant**](docs/VariantApi.md#updateVariant) | **PUT** /API/Variant/{productId} | Update variant
+*GeinsSdkApiMgmtJavascript.VariantApi* | [**updateVariantGroup**](docs/VariantApi.md#updateVariantGroup) | **PUT** /API/VariantGroup/{groupId} | Update variant group
+*GeinsSdkApiMgmtJavascript.WebhookApi* | [**createWebhook**](docs/WebhookApi.md#createWebhook) | **POST** /API/Webhook | Create webhook
+*GeinsSdkApiMgmtJavascript.WebhookApi* | [**deleteWebhook**](docs/WebhookApi.md#deleteWebhook) | **DELETE** /API/Webhook/{webhookId} | Delete webhook
+*GeinsSdkApiMgmtJavascript.WebhookApi* | [**getWebhook**](docs/WebhookApi.md#getWebhook) | **GET** /API/Webhook/{webhookId} | Get webhook
+*GeinsSdkApiMgmtJavascript.WebhookApi* | [**listWebhooks**](docs/WebhookApi.md#listWebhooks) | **GET** /API/Webhook/List | List webhooks
+*GeinsSdkApiMgmtJavascript.WebhookApi* | [**updateWebhook**](docs/WebhookApi.md#updateWebhook) | **PUT** /API/Webhook/{webhookId} | Update webhook
 
 
-## Documentation for Models
+## Models
 
- - [GeinsManagementApiSdkJs.APIOrderOrderComment](docs/APIOrderOrderComment.md)
- - [GeinsManagementApiSdkJs.APIOrderTransactionData](docs/APIOrderTransactionData.md)
- - [GeinsManagementApiSdkJs.BrandModelsBrandQuery](docs/BrandModelsBrandQuery.md)
- - [GeinsManagementApiSdkJs.BrandModelsReadBrand](docs/BrandModelsReadBrand.md)
- - [GeinsManagementApiSdkJs.BrandModelsWriteBrand](docs/BrandModelsWriteBrand.md)
- - [GeinsManagementApiSdkJs.CategoryModelsCategoryQuery](docs/CategoryModelsCategoryQuery.md)
- - [GeinsManagementApiSdkJs.CategoryModelsReadCategory](docs/CategoryModelsReadCategory.md)
- - [GeinsManagementApiSdkJs.CategoryModelsWriteCategory](docs/CategoryModelsWriteCategory.md)
- - [GeinsManagementApiSdkJs.ContainerRestrictionSetupContainerRestrictionConfiguration](docs/ContainerRestrictionSetupContainerRestrictionConfiguration.md)
- - [GeinsManagementApiSdkJs.Envelope](docs/Envelope.md)
- - [GeinsManagementApiSdkJs.EnvelopeBrandModelsReadBrand](docs/EnvelopeBrandModelsReadBrand.md)
- - [GeinsManagementApiSdkJs.EnvelopeCategoryModelsReadCategory](docs/EnvelopeCategoryModelsReadCategory.md)
- - [GeinsManagementApiSdkJs.EnvelopeInt](docs/EnvelopeInt.md)
- - [GeinsManagementApiSdkJs.EnvelopeListProductModelsReadFeed](docs/EnvelopeListProductModelsReadFeed.md)
- - [GeinsManagementApiSdkJs.EnvelopeListProductModelsReadProduct](docs/EnvelopeListProductModelsReadProduct.md)
- - [GeinsManagementApiSdkJs.EnvelopeListProductModelsReadProductItem](docs/EnvelopeListProductModelsReadProductItem.md)
- - [GeinsManagementApiSdkJs.EnvelopeListProductModelsReadRelationType](docs/EnvelopeListProductModelsReadRelationType.md)
- - [GeinsManagementApiSdkJs.EnvelopeMarketModelsMarket](docs/EnvelopeMarketModelsMarket.md)
- - [GeinsManagementApiSdkJs.EnvelopePageAreaModelsReadPageArea](docs/EnvelopePageAreaModelsReadPageArea.md)
- - [GeinsManagementApiSdkJs.EnvelopePageAreaModelsReadPageAreaFamily](docs/EnvelopePageAreaModelsReadPageAreaFamily.md)
- - [GeinsManagementApiSdkJs.EnvelopeProductModelsReadProduct](docs/EnvelopeProductModelsReadProduct.md)
- - [GeinsManagementApiSdkJs.EnvelopeProductModelsReadProductItem](docs/EnvelopeProductModelsReadProductItem.md)
- - [GeinsManagementApiSdkJs.EnvelopeProductParameterModelsReadProductParameter](docs/EnvelopeProductParameterModelsReadProductParameter.md)
- - [GeinsManagementApiSdkJs.EnvelopeProductParameterModelsReadProductParameterGroup](docs/EnvelopeProductParameterModelsReadProductParameterGroup.md)
- - [GeinsManagementApiSdkJs.EnvelopeProductParameterModelsReadProductParameterPredefinedValue](docs/EnvelopeProductParameterModelsReadProductParameterPredefinedValue.md)
- - [GeinsManagementApiSdkJs.EnvelopeProductParameterModelsReadProductParameterValue](docs/EnvelopeProductParameterModelsReadProductParameterValue.md)
- - [GeinsManagementApiSdkJs.EnvelopeString](docs/EnvelopeString.md)
- - [GeinsManagementApiSdkJs.EnvelopeSupplierModelsReadSupplier](docs/EnvelopeSupplierModelsReadSupplier.md)
- - [GeinsManagementApiSdkJs.EnvelopeUserModelsReadUserProfile](docs/EnvelopeUserModelsReadUserProfile.md)
- - [GeinsManagementApiSdkJs.EnvelopeVariantModelsReadVariant](docs/EnvelopeVariantModelsReadVariant.md)
- - [GeinsManagementApiSdkJs.EnvelopeVariantModelsReadVariantGroup](docs/EnvelopeVariantModelsReadVariantGroup.md)
- - [GeinsManagementApiSdkJs.MarketModelsMarket](docs/MarketModelsMarket.md)
- - [GeinsManagementApiSdkJs.OrderCapture](docs/OrderCapture.md)
- - [GeinsManagementApiSdkJs.OrderCaptureRow](docs/OrderCaptureRow.md)
- - [GeinsManagementApiSdkJs.OrderCheckoutOrder](docs/OrderCheckoutOrder.md)
- - [GeinsManagementApiSdkJs.OrderCheckoutOrderRow](docs/OrderCheckoutOrderRow.md)
- - [GeinsManagementApiSdkJs.OrderFreightClass](docs/OrderFreightClass.md)
- - [GeinsManagementApiSdkJs.OrderModelsAddress](docs/OrderModelsAddress.md)
- - [GeinsManagementApiSdkJs.OrderModelsOrder](docs/OrderModelsOrder.md)
- - [GeinsManagementApiSdkJs.OrderModelsOrderQuery](docs/OrderModelsOrderQuery.md)
- - [GeinsManagementApiSdkJs.OrderModelsOrderRow](docs/OrderModelsOrderRow.md)
- - [GeinsManagementApiSdkJs.OrderModelsOrderStatus](docs/OrderModelsOrderStatus.md)
- - [GeinsManagementApiSdkJs.OrderModelsOrderUpdate](docs/OrderModelsOrderUpdate.md)
- - [GeinsManagementApiSdkJs.OrderModelsPaymentDetail](docs/OrderModelsPaymentDetail.md)
- - [GeinsManagementApiSdkJs.OrderModelsRefund](docs/OrderModelsRefund.md)
- - [GeinsManagementApiSdkJs.OrderModelsShippingDetail](docs/OrderModelsShippingDetail.md)
- - [GeinsManagementApiSdkJs.OrderProcessedCapture](docs/OrderProcessedCapture.md)
- - [GeinsManagementApiSdkJs.OrderProcessedRefund](docs/OrderProcessedRefund.md)
- - [GeinsManagementApiSdkJs.OrderRefund](docs/OrderRefund.md)
- - [GeinsManagementApiSdkJs.OrderRefundRow](docs/OrderRefundRow.md)
- - [GeinsManagementApiSdkJs.OrderValidateOrderCreationRequest](docs/OrderValidateOrderCreationRequest.md)
- - [GeinsManagementApiSdkJs.OrderValidateOrderCreationRequestStockItem](docs/OrderValidateOrderCreationRequestStockItem.md)
- - [GeinsManagementApiSdkJs.PageAreaModelsReadPageArea](docs/PageAreaModelsReadPageArea.md)
- - [GeinsManagementApiSdkJs.PageAreaModelsReadPageAreaFamily](docs/PageAreaModelsReadPageAreaFamily.md)
- - [GeinsManagementApiSdkJs.PageAreaModelsReadPageWidget](docs/PageAreaModelsReadPageWidget.md)
- - [GeinsManagementApiSdkJs.PageAreaModelsReadPageWidgetContainer](docs/PageAreaModelsReadPageWidgetContainer.md)
- - [GeinsManagementApiSdkJs.PageAreaModelsWritePageArea](docs/PageAreaModelsWritePageArea.md)
- - [GeinsManagementApiSdkJs.PageAreaModelsWritePageAreaFamily](docs/PageAreaModelsWritePageAreaFamily.md)
- - [GeinsManagementApiSdkJs.PageResult](docs/PageResult.md)
- - [GeinsManagementApiSdkJs.PageWidgetLazyLoadSetupLazyLoadCollectionConfiguration](docs/PageWidgetLazyLoadSetupLazyLoadCollectionConfiguration.md)
- - [GeinsManagementApiSdkJs.PageWidgetLazyLoadSetupLazyLoadConfiguration](docs/PageWidgetLazyLoadSetupLazyLoadConfiguration.md)
- - [GeinsManagementApiSdkJs.PaymentModelsPaymentOption](docs/PaymentModelsPaymentOption.md)
- - [GeinsManagementApiSdkJs.PaymentModelsPaymentOptionQuery](docs/PaymentModelsPaymentOptionQuery.md)
- - [GeinsManagementApiSdkJs.PriceListModelsPriceList](docs/PriceListModelsPriceList.md)
- - [GeinsManagementApiSdkJs.PriceListModelsPriceListPriceResponse](docs/PriceListModelsPriceListPriceResponse.md)
- - [GeinsManagementApiSdkJs.PriceListModelsReadPriceListPrice](docs/PriceListModelsReadPriceListPrice.md)
- - [GeinsManagementApiSdkJs.PriceListModelsWritePriceListPrice](docs/PriceListModelsWritePriceListPrice.md)
- - [GeinsManagementApiSdkJs.ProductModelsMonitorSku](docs/ProductModelsMonitorSku.md)
- - [GeinsManagementApiSdkJs.ProductModelsProductCategory](docs/ProductModelsProductCategory.md)
- - [GeinsManagementApiSdkJs.ProductModelsProductQuery](docs/ProductModelsProductQuery.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadFeed](docs/ProductModelsReadFeed.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadFeedMembership](docs/ProductModelsReadFeedMembership.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadImage](docs/ProductModelsReadImage.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadProduct](docs/ProductModelsReadProduct.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadProductItem](docs/ProductModelsReadProductItem.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadProductItemStock](docs/ProductModelsReadProductItemStock.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadProductUrl](docs/ProductModelsReadProductUrl.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadRelatedProduct](docs/ProductModelsReadRelatedProduct.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadRelationType](docs/ProductModelsReadRelationType.md)
- - [GeinsManagementApiSdkJs.ProductModelsReadShippingFee](docs/ProductModelsReadShippingFee.md)
- - [GeinsManagementApiSdkJs.ProductModelsRelatedProductEnvelope](docs/ProductModelsRelatedProductEnvelope.md)
- - [GeinsManagementApiSdkJs.ProductModelsStockEnvelope](docs/ProductModelsStockEnvelope.md)
- - [GeinsManagementApiSdkJs.ProductModelsWriteProduct](docs/ProductModelsWriteProduct.md)
- - [GeinsManagementApiSdkJs.ProductModelsWriteProductItem](docs/ProductModelsWriteProductItem.md)
- - [GeinsManagementApiSdkJs.ProductModelsWriteProductItemStock](docs/ProductModelsWriteProductItemStock.md)
- - [GeinsManagementApiSdkJs.ProductModelsWriteRelatedProduct](docs/ProductModelsWriteRelatedProduct.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsReadProductParameter](docs/ProductParameterModelsReadProductParameter.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsReadProductParameterGroup](docs/ProductParameterModelsReadProductParameterGroup.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsReadProductParameterPredefinedValue](docs/ProductParameterModelsReadProductParameterPredefinedValue.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsReadProductParameterValue](docs/ProductParameterModelsReadProductParameterValue.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsWriteProductParameter](docs/ProductParameterModelsWriteProductParameter.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsWriteProductParameterGroup](docs/ProductParameterModelsWriteProductParameterGroup.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsWriteProductParameterPredefinedValue](docs/ProductParameterModelsWriteProductParameterPredefinedValue.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsWriteProductParameterValue](docs/ProductParameterModelsWriteProductParameterValue.md)
- - [GeinsManagementApiSdkJs.ProductParameterModelsWriteProductParameterValueBatch](docs/ProductParameterModelsWriteProductParameterValueBatch.md)
- - [GeinsManagementApiSdkJs.ProductProductItemEnvelope](docs/ProductProductItemEnvelope.md)
- - [GeinsManagementApiSdkJs.SharedModelsLocalizableContent](docs/SharedModelsLocalizableContent.md)
- - [GeinsManagementApiSdkJs.ShippingModelsParcelGroupOptions](docs/ShippingModelsParcelGroupOptions.md)
- - [GeinsManagementApiSdkJs.ShippingModelsShippingOption](docs/ShippingModelsShippingOption.md)
- - [GeinsManagementApiSdkJs.ShippingModelsShippingQuery](docs/ShippingModelsShippingQuery.md)
- - [GeinsManagementApiSdkJs.ShippingModelsShippingSubOption](docs/ShippingModelsShippingSubOption.md)
- - [GeinsManagementApiSdkJs.SupplierModelsReadSupplier](docs/SupplierModelsReadSupplier.md)
- - [GeinsManagementApiSdkJs.SupplierModelsSupplierQuery](docs/SupplierModelsSupplierQuery.md)
- - [GeinsManagementApiSdkJs.SupplierModelsWriteSupplier](docs/SupplierModelsWriteSupplier.md)
- - [GeinsManagementApiSdkJs.SystemNullableValidationConfiguration](docs/SystemNullableValidationConfiguration.md)
- - [GeinsManagementApiSdkJs.UserModelsReadUserProfile](docs/UserModelsReadUserProfile.md)
- - [GeinsManagementApiSdkJs.UserModelsUserProfileQuery](docs/UserModelsUserProfileQuery.md)
- - [GeinsManagementApiSdkJs.UserModelsWriteUserProfile](docs/UserModelsWriteUserProfile.md)
- - [GeinsManagementApiSdkJs.VariantModelsReadVariant](docs/VariantModelsReadVariant.md)
- - [GeinsManagementApiSdkJs.VariantModelsReadVariantGroup](docs/VariantModelsReadVariantGroup.md)
- - [GeinsManagementApiSdkJs.VariantModelsWriteVariant](docs/VariantModelsWriteVariant.md)
- - [GeinsManagementApiSdkJs.VariantModelsWriteVariantGroup](docs/VariantModelsWriteVariantGroup.md)
- - [GeinsManagementApiSdkJs.WidgetRestrictionSetupWidgetRestrictionConfiguration](docs/WidgetRestrictionSetupWidgetRestrictionConfiguration.md)
+ - [GeinsSdkApiMgmtJavascript.APIOrderOrderComment](docs/APIOrderOrderComment.md)
+ - [GeinsSdkApiMgmtJavascript.APIOrderOrderCreationValidationStatus](docs/APIOrderOrderCreationValidationStatus.md)
+ - [GeinsSdkApiMgmtJavascript.APIOrderTransactionData](docs/APIOrderTransactionData.md)
+ - [GeinsSdkApiMgmtJavascript.BaseEnvelope](docs/BaseEnvelope.md)
+ - [GeinsSdkApiMgmtJavascript.BrandModelsBrandQuery](docs/BrandModelsBrandQuery.md)
+ - [GeinsSdkApiMgmtJavascript.BrandModelsReadBrand](docs/BrandModelsReadBrand.md)
+ - [GeinsSdkApiMgmtJavascript.BrandModelsWriteBrand](docs/BrandModelsWriteBrand.md)
+ - [GeinsSdkApiMgmtJavascript.CategoryModelsCategoryQuery](docs/CategoryModelsCategoryQuery.md)
+ - [GeinsSdkApiMgmtJavascript.CategoryModelsReadCategory](docs/CategoryModelsReadCategory.md)
+ - [GeinsSdkApiMgmtJavascript.CategoryModelsWriteCategory](docs/CategoryModelsWriteCategory.md)
+ - [GeinsSdkApiMgmtJavascript.ContainerRestrictionSetupContainerRestrictionConfiguration](docs/ContainerRestrictionSetupContainerRestrictionConfiguration.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeAPIOrderOrderCreationValidationStatus](docs/EnvelopeAPIOrderOrderCreationValidationStatus.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeBrandModelsReadBrand](docs/EnvelopeBrandModelsReadBrand.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeCategoryModelsReadCategory](docs/EnvelopeCategoryModelsReadCategory.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeGeinsWebhookItem](docs/EnvelopeGeinsWebhookItem.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeInt](docs/EnvelopeInt.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListBrandModelsReadBrand](docs/EnvelopeListBrandModelsReadBrand.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListGeinsWebhookItem](docs/EnvelopeListGeinsWebhookItem.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListPageAreaModelsReadPageAreaFamily](docs/EnvelopeListPageAreaModelsReadPageAreaFamily.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListProductModelsReadFeed](docs/EnvelopeListProductModelsReadFeed.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListProductModelsReadProductItem](docs/EnvelopeListProductModelsReadProductItem.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListProductModelsReadProductItemStock](docs/EnvelopeListProductModelsReadProductItemStock.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListProductModelsReadRelationType](docs/EnvelopeListProductModelsReadRelationType.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListRefund](docs/EnvelopeListRefund.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListReturn](docs/EnvelopeListReturn.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListReturnCode](docs/EnvelopeListReturnCode.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListShippingModelsReadParcelGroup](docs/EnvelopeListShippingModelsReadParcelGroup.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListSystemString](docs/EnvelopeListSystemString.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListUserModelsReadBalanceTransaction](docs/EnvelopeListUserModelsReadBalanceTransaction.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListUserModelsReadBalanceType](docs/EnvelopeListUserModelsReadBalanceType.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeListVariantModelsReadVariant](docs/EnvelopeListVariantModelsReadVariant.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeMarketModelsMarket](docs/EnvelopeMarketModelsMarket.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeNullableGuid](docs/EnvelopeNullableGuid.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeNullableInt](docs/EnvelopeNullableInt.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeNullableSystemBoolean](docs/EnvelopeNullableSystemBoolean.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeOrderCapture](docs/EnvelopeOrderCapture.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopePageAreaModelsReadPageArea](docs/EnvelopePageAreaModelsReadPageArea.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopePageAreaModelsReadPageAreaFamily](docs/EnvelopePageAreaModelsReadPageAreaFamily.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeProductModelsReadProduct](docs/EnvelopeProductModelsReadProduct.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeProductModelsReadProductItem](docs/EnvelopeProductModelsReadProductItem.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeProductModelsReadProductItemResult](docs/EnvelopeProductModelsReadProductItemResult.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeProductModelsReadUploadedImage](docs/EnvelopeProductModelsReadUploadedImage.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeProductParameterModelsReadProductParameter](docs/EnvelopeProductParameterModelsReadProductParameter.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeProductParameterModelsReadProductParameterGroup](docs/EnvelopeProductParameterModelsReadProductParameterGroup.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeProductParameterModelsReadProductParameterPredefinedValue](docs/EnvelopeProductParameterModelsReadProductParameterPredefinedValue.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeProductParameterModelsReadProductParameterValue](docs/EnvelopeProductParameterModelsReadProductParameterValue.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeRefund](docs/EnvelopeRefund.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeReturn](docs/EnvelopeReturn.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeSupplierModelsReadSupplier](docs/EnvelopeSupplierModelsReadSupplier.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeUserModelsReadBalance](docs/EnvelopeUserModelsReadBalance.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeUserModelsReadUserProfile](docs/EnvelopeUserModelsReadUserProfile.md)
+ - [GeinsSdkApiMgmtJavascript.EnvelopeVariantModelsReadVariantGroup](docs/EnvelopeVariantModelsReadVariantGroup.md)
+ - [GeinsSdkApiMgmtJavascript.GeinsWebhookItem](docs/GeinsWebhookItem.md)
+ - [GeinsSdkApiMgmtJavascript.MarketModelsMarket](docs/MarketModelsMarket.md)
+ - [GeinsSdkApiMgmtJavascript.NewReturnRow](docs/NewReturnRow.md)
+ - [GeinsSdkApiMgmtJavascript.NullableValidationConfiguration](docs/NullableValidationConfiguration.md)
+ - [GeinsSdkApiMgmtJavascript.OrderCapture](docs/OrderCapture.md)
+ - [GeinsSdkApiMgmtJavascript.OrderCaptureRow](docs/OrderCaptureRow.md)
+ - [GeinsSdkApiMgmtJavascript.OrderCheckoutOrder](docs/OrderCheckoutOrder.md)
+ - [GeinsSdkApiMgmtJavascript.OrderCheckoutOrderRow](docs/OrderCheckoutOrderRow.md)
+ - [GeinsSdkApiMgmtJavascript.OrderFreightClass](docs/OrderFreightClass.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsAddress](docs/OrderModelsAddress.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsOrder](docs/OrderModelsOrder.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsOrderQuery](docs/OrderModelsOrderQuery.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsOrderRefund](docs/OrderModelsOrderRefund.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsOrderRow](docs/OrderModelsOrderRow.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsOrderStatus](docs/OrderModelsOrderStatus.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsOrderUpdate](docs/OrderModelsOrderUpdate.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsPaymentDetail](docs/OrderModelsPaymentDetail.md)
+ - [GeinsSdkApiMgmtJavascript.OrderModelsShippingDetail](docs/OrderModelsShippingDetail.md)
+ - [GeinsSdkApiMgmtJavascript.OrderProcessedCapture](docs/OrderProcessedCapture.md)
+ - [GeinsSdkApiMgmtJavascript.OrderRefundModelsWriteNewRefund](docs/OrderRefundModelsWriteNewRefund.md)
+ - [GeinsSdkApiMgmtJavascript.OrderRefundModelsWriteProcessedRefund](docs/OrderRefundModelsWriteProcessedRefund.md)
+ - [GeinsSdkApiMgmtJavascript.OrderRefundModelsWriteRefundApproval](docs/OrderRefundModelsWriteRefundApproval.md)
+ - [GeinsSdkApiMgmtJavascript.OrderRefundModelsWriteSettledRefund](docs/OrderRefundModelsWriteSettledRefund.md)
+ - [GeinsSdkApiMgmtJavascript.OrderRefundModelsWriteSettledRefundRow](docs/OrderRefundModelsWriteSettledRefundRow.md)
+ - [GeinsSdkApiMgmtJavascript.OrderReturnModelsWriteNewReturn](docs/OrderReturnModelsWriteNewReturn.md)
+ - [GeinsSdkApiMgmtJavascript.OrderValidateOrderCreationRequest](docs/OrderValidateOrderCreationRequest.md)
+ - [GeinsSdkApiMgmtJavascript.OrderValidateOrderCreationRequestStockItem](docs/OrderValidateOrderCreationRequestStockItem.md)
+ - [GeinsSdkApiMgmtJavascript.PageAreaModelsReadPageArea](docs/PageAreaModelsReadPageArea.md)
+ - [GeinsSdkApiMgmtJavascript.PageAreaModelsReadPageAreaFamily](docs/PageAreaModelsReadPageAreaFamily.md)
+ - [GeinsSdkApiMgmtJavascript.PageAreaModelsReadPageWidget](docs/PageAreaModelsReadPageWidget.md)
+ - [GeinsSdkApiMgmtJavascript.PageAreaModelsReadPageWidgetContainer](docs/PageAreaModelsReadPageWidgetContainer.md)
+ - [GeinsSdkApiMgmtJavascript.PageAreaModelsWritePageArea](docs/PageAreaModelsWritePageArea.md)
+ - [GeinsSdkApiMgmtJavascript.PageAreaModelsWritePageAreaFamily](docs/PageAreaModelsWritePageAreaFamily.md)
+ - [GeinsSdkApiMgmtJavascript.PageResult](docs/PageResult.md)
+ - [GeinsSdkApiMgmtJavascript.PageWidgetLazyLoadSetupLazyLoadCollectionConfiguration](docs/PageWidgetLazyLoadSetupLazyLoadCollectionConfiguration.md)
+ - [GeinsSdkApiMgmtJavascript.PageWidgetLazyLoadSetupLazyLoadConfiguration](docs/PageWidgetLazyLoadSetupLazyLoadConfiguration.md)
+ - [GeinsSdkApiMgmtJavascript.PagedEnvelopeListProductModelsReadProduct](docs/PagedEnvelopeListProductModelsReadProduct.md)
+ - [GeinsSdkApiMgmtJavascript.PagedEnvelopeListUserModelsReadUserProfile](docs/PagedEnvelopeListUserModelsReadUserProfile.md)
+ - [GeinsSdkApiMgmtJavascript.PaymentModelsPaymentOption](docs/PaymentModelsPaymentOption.md)
+ - [GeinsSdkApiMgmtJavascript.PaymentModelsPaymentOptionQuery](docs/PaymentModelsPaymentOptionQuery.md)
+ - [GeinsSdkApiMgmtJavascript.PriceListModelsPriceList](docs/PriceListModelsPriceList.md)
+ - [GeinsSdkApiMgmtJavascript.PriceListModelsPriceListPriceResponse](docs/PriceListModelsPriceListPriceResponse.md)
+ - [GeinsSdkApiMgmtJavascript.PriceListModelsReadPriceListPrice](docs/PriceListModelsReadPriceListPrice.md)
+ - [GeinsSdkApiMgmtJavascript.PriceListModelsWritePriceListPrice](docs/PriceListModelsWritePriceListPrice.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsMonitorSku](docs/ProductModelsMonitorSku.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsProductCategory](docs/ProductModelsProductCategory.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsProductQuery](docs/ProductModelsProductQuery.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadDiscountCampaign](docs/ProductModelsReadDiscountCampaign.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadFeed](docs/ProductModelsReadFeed.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadFeedMembership](docs/ProductModelsReadFeedMembership.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadImage](docs/ProductModelsReadImage.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadProduct](docs/ProductModelsReadProduct.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadProductItem](docs/ProductModelsReadProductItem.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadProductItemResult](docs/ProductModelsReadProductItemResult.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadProductItemStock](docs/ProductModelsReadProductItemStock.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadProductUrl](docs/ProductModelsReadProductUrl.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadRelatedProduct](docs/ProductModelsReadRelatedProduct.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadRelationType](docs/ProductModelsReadRelationType.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadShippingFee](docs/ProductModelsReadShippingFee.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsReadUploadedImage](docs/ProductModelsReadUploadedImage.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsRelatedProductEnvelope](docs/ProductModelsRelatedProductEnvelope.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsStockEnvelope](docs/ProductModelsStockEnvelope.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsWriteProduct](docs/ProductModelsWriteProduct.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsWriteProductItem](docs/ProductModelsWriteProductItem.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsWriteProductItemStock](docs/ProductModelsWriteProductItemStock.md)
+ - [GeinsSdkApiMgmtJavascript.ProductModelsWriteRelatedProduct](docs/ProductModelsWriteRelatedProduct.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsReadProductParameter](docs/ProductParameterModelsReadProductParameter.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsReadProductParameterGroup](docs/ProductParameterModelsReadProductParameterGroup.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsReadProductParameterPredefinedValue](docs/ProductParameterModelsReadProductParameterPredefinedValue.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsReadProductParameterValue](docs/ProductParameterModelsReadProductParameterValue.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsWriteProductParameter](docs/ProductParameterModelsWriteProductParameter.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsWriteProductParameterGroup](docs/ProductParameterModelsWriteProductParameterGroup.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsWriteProductParameterPredefinedValue](docs/ProductParameterModelsWriteProductParameterPredefinedValue.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsWriteProductParameterValue](docs/ProductParameterModelsWriteProductParameterValue.md)
+ - [GeinsSdkApiMgmtJavascript.ProductParameterModelsWriteProductParameterValueBatch](docs/ProductParameterModelsWriteProductParameterValueBatch.md)
+ - [GeinsSdkApiMgmtJavascript.ProductProductItemEnvelope](docs/ProductProductItemEnvelope.md)
+ - [GeinsSdkApiMgmtJavascript.Refund](docs/Refund.md)
+ - [GeinsSdkApiMgmtJavascript.RefundCoreModelsOrderOrderRow](docs/RefundCoreModelsOrderOrderRow.md)
+ - [GeinsSdkApiMgmtJavascript.RefundQuery](docs/RefundQuery.md)
+ - [GeinsSdkApiMgmtJavascript.RefundRow](docs/RefundRow.md)
+ - [GeinsSdkApiMgmtJavascript.Return](docs/Return.md)
+ - [GeinsSdkApiMgmtJavascript.ReturnCode](docs/ReturnCode.md)
+ - [GeinsSdkApiMgmtJavascript.ReturnRow](docs/ReturnRow.md)
+ - [GeinsSdkApiMgmtJavascript.SharedModelsLocalizableContent](docs/SharedModelsLocalizableContent.md)
+ - [GeinsSdkApiMgmtJavascript.ShippingModelsParcelGroupOptions](docs/ShippingModelsParcelGroupOptions.md)
+ - [GeinsSdkApiMgmtJavascript.ShippingModelsParcelGroupQuery](docs/ShippingModelsParcelGroupQuery.md)
+ - [GeinsSdkApiMgmtJavascript.ShippingModelsReadParcel](docs/ShippingModelsReadParcel.md)
+ - [GeinsSdkApiMgmtJavascript.ShippingModelsReadParcelGroup](docs/ShippingModelsReadParcelGroup.md)
+ - [GeinsSdkApiMgmtJavascript.ShippingModelsShippingOption](docs/ShippingModelsShippingOption.md)
+ - [GeinsSdkApiMgmtJavascript.ShippingModelsShippingQuery](docs/ShippingModelsShippingQuery.md)
+ - [GeinsSdkApiMgmtJavascript.ShippingModelsShippingSubOption](docs/ShippingModelsShippingSubOption.md)
+ - [GeinsSdkApiMgmtJavascript.SupplierModelsReadSupplier](docs/SupplierModelsReadSupplier.md)
+ - [GeinsSdkApiMgmtJavascript.SupplierModelsSupplierQuery](docs/SupplierModelsSupplierQuery.md)
+ - [GeinsSdkApiMgmtJavascript.SupplierModelsWriteSupplier](docs/SupplierModelsWriteSupplier.md)
+ - [GeinsSdkApiMgmtJavascript.UserModelsReadBalance](docs/UserModelsReadBalance.md)
+ - [GeinsSdkApiMgmtJavascript.UserModelsReadBalanceTransaction](docs/UserModelsReadBalanceTransaction.md)
+ - [GeinsSdkApiMgmtJavascript.UserModelsReadBalanceType](docs/UserModelsReadBalanceType.md)
+ - [GeinsSdkApiMgmtJavascript.UserModelsReadUserProfile](docs/UserModelsReadUserProfile.md)
+ - [GeinsSdkApiMgmtJavascript.UserModelsUserProfileQuery](docs/UserModelsUserProfileQuery.md)
+ - [GeinsSdkApiMgmtJavascript.UserModelsWriteBalanceTransaction](docs/UserModelsWriteBalanceTransaction.md)
+ - [GeinsSdkApiMgmtJavascript.UserModelsWriteUserProfile](docs/UserModelsWriteUserProfile.md)
+ - [GeinsSdkApiMgmtJavascript.VariantModelsReadVariant](docs/VariantModelsReadVariant.md)
+ - [GeinsSdkApiMgmtJavascript.VariantModelsReadVariantGroup](docs/VariantModelsReadVariantGroup.md)
+ - [GeinsSdkApiMgmtJavascript.VariantModelsWriteVariant](docs/VariantModelsWriteVariant.md)
+ - [GeinsSdkApiMgmtJavascript.VariantModelsWriteVariantGroup](docs/VariantModelsWriteVariantGroup.md)
+ - [GeinsSdkApiMgmtJavascript.WebhookModelsRestWebhook](docs/WebhookModelsRestWebhook.md)
+ - [GeinsSdkApiMgmtJavascript.WidgetRestrictionSetupWidgetRestrictionConfiguration](docs/WidgetRestrictionSetupWidgetRestrictionConfiguration.md)
 
 
-## Documentation for Authorization
-
-
+## Authorization
 
 ### apiKey
 
-
 - **Type**: API key
-- **API key parameter name**: x-apikey
+- **API key parameter name**: X-ApiKey
 - **Location**: HTTP header
-
-
 
 ### basicAuth
 

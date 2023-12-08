@@ -1,13 +1,13 @@
-# GeinsManagementApiSdkJs.CategoryApi
+# GeinsSdkApiMgmtJavascript.CategoryApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCategory**](CategoryApi.md#createCategory) | **POST** /API/Category | Create a new category
-[**getCategoryById**](CategoryApi.md#getCategoryById) | **GET** /API/Category/{id} | Get a specific category
+[**createCategory**](CategoryApi.md#createCategory) | **POST** /API/Category | Create category
+[**getCategory**](CategoryApi.md#getCategory) | **GET** /API/Category/{id} | Get category
 [**queryCategories**](CategoryApi.md#queryCategories) | **POST** /API/Category/Query | Query categories
-[**updateCategory**](CategoryApi.md#updateCategory) | **PUT** /API/Category/{id} | Update a category
+[**updateCategory**](CategoryApi.md#updateCategory) | **PUT** /API/Category/{id} | Update category
 
 
 
@@ -15,13 +15,13 @@ Method | HTTP request | Description
 
 > EnvelopeCategoryModelsReadCategory createCategory(category)
 
-Create a new category
+Create category
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -32,8 +32,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.CategoryApi();
-let category = new GeinsManagementApiSdkJs.CategoryModelsWriteCategory(); // CategoryModelsWriteCategory | The category to create.
+let apiInstance = new GeinsSdkApiMgmtJavascript.CategoryApi();
+let category = new GeinsSdkApiMgmtJavascript.CategoryModelsWriteCategory(); // CategoryModelsWriteCategory | The category to create.
 apiInstance.createCategory(category, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -60,21 +60,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## getCategoryById
+## getCategory
 
-> EnvelopeCategoryModelsReadCategory getCategoryById(id)
+> EnvelopeCategoryModelsReadCategory getCategory(id)
 
-Get a specific category
+Get category
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -85,9 +85,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.CategoryApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.CategoryApi();
 let id = 56; // Number | The id of the category to get.
-apiInstance.getCategoryById(id, (error, data, response) => {
+apiInstance.getCategory(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## queryCategories
@@ -123,13 +123,11 @@ Name | Type | Description  | Notes
 
 Query categories
 
-No response envelope.
-
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -140,8 +138,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.CategoryApi();
-let query = new GeinsManagementApiSdkJs.CategoryModelsCategoryQuery(); // CategoryModelsCategoryQuery | The query to filter categories by.
+let apiInstance = new GeinsSdkApiMgmtJavascript.CategoryApi();
+let query = new GeinsSdkApiMgmtJavascript.CategoryModelsCategoryQuery(); // CategoryModelsCategoryQuery | The query to filter categories by.
 apiInstance.queryCategories(query, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -168,23 +166,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## updateCategory
 
 > EnvelopeCategoryModelsReadCategory updateCategory(id, category)
 
-Update a category
+Update category
 
-Leaving out a property will ensure no changes are made to that property. Collection properties will delete and/or add as necessary to match the supplied data.
+Leaving out a property will ensure no changes are made to that property.    Collection properties will delete and/or add as necessary to match the supplied data.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -195,9 +193,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.CategoryApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.CategoryApi();
 let id = 56; // Number | The id of the category to update.
-let category = new GeinsManagementApiSdkJs.CategoryModelsWriteCategory(); // CategoryModelsWriteCategory | The category data to update.
+let category = new GeinsSdkApiMgmtJavascript.CategoryModelsWriteCategory(); // CategoryModelsWriteCategory | The category data to update.
 apiInstance.updateCategory(id, category, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -225,6 +223,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 

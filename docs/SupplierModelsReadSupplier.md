@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.SupplierModelsReadSupplier
+# GeinsSdkApiMgmtJavascript.SupplierModelsReadSupplier
 
 ## Properties
 

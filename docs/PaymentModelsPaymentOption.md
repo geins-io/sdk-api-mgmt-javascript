@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.PaymentModelsPaymentOption
+# GeinsSdkApiMgmtJavascript.PaymentModelsPaymentOption
 
 ## Properties
 

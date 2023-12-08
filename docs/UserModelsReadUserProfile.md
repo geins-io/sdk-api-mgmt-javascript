@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.UserModelsReadUserProfile
+# GeinsSdkApiMgmtJavascript.UserModelsReadUserProfile
 
 ## Properties
 
@@ -27,6 +27,12 @@ Name | Type | Description | Notes
 **countryId** | **Number** |  | [optional] 
 **userTypeId** | **Number** |  | [optional] 
 **gender** | **Boolean** |  | [optional] 
+**memberDiscount** | **Number** |  | [optional] 
 **newsletter** | **Boolean** | Decides whether the user should be subscribed to the newsletter. | [optional] 
+**blacklisted** | **Boolean** |  | [optional] 
+**active** | **Boolean** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 
+**updatedOn** | **Date** |  | [optional] 
+**metaData** | **String** |  | [optional] 
 
 

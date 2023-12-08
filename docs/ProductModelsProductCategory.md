@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductModelsProductCategory
+# GeinsSdkApiMgmtJavascript.ProductModelsProductCategory
 
 ## Properties
 

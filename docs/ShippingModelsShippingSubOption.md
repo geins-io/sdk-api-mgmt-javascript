@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ShippingModelsShippingSubOption
+# GeinsSdkApiMgmtJavascript.ShippingModelsShippingSubOption
 
 ## Properties
 

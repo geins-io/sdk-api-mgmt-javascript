@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.PriceListModelsPriceListPriceResponse
+# GeinsSdkApiMgmtJavascript.PriceListModelsPriceListPriceResponse
 
 ## Properties
 

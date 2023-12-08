@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.OrderCheckoutOrderRow
+# GeinsSdkApiMgmtJavascript.OrderCheckoutOrderRow
 
 ## Properties
 
@@ -35,5 +35,8 @@ Name | Type | Description | Notes
 **campaignNames** | **[String]** |  | [optional] 
 **productPriceCampaignId** | **Number** |  | [optional] 
 **productPriceListId** | **Number** |  | [optional] 
+**productPackageId** | **Number** |  | [optional] 
+**productPackageName** | **String** |  | [optional] 
+**productPackageGroupId** | **String** |  | [optional] 
 
 

@@ -1,12 +1,11 @@
-# GeinsManagementApiSdkJs.EnvelopeProductParameterModelsReadProductParameterPredefinedValue
+# GeinsSdkApiMgmtJavascript.EnvelopeProductParameterModelsReadProductParameterPredefinedValue
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**resource** | [**ProductParameterModelsReadProductParameterPredefinedValue**](ProductParameterModelsReadProductParameterPredefinedValue.md) |  | [optional] 
 **message** | **String** | A status message for the action taken. | [optional] 
 **details** | **[String]** | Any validation messages for the data on the current action. | [optional] 
-**resource** | [**ProductParameterModelsReadProductParameterPredefinedValue**](ProductParameterModelsReadProductParameterPredefinedValue.md) |  | [optional] 
-**pageResult** | [**PageResult**](PageResult.md) |  | [optional] 
 
 

@@ -1,41 +1,42 @@
-# GeinsManagementApiSdkJs.OrderApi
+# GeinsSdkApiMgmtJavascript.OrderApi
 
-All URIs are relative to *https://mgmtapi.carismar.io*
+All URIs are relative to *https://mgmtapi.geins.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCommentToOrder**](OrderApi.md#addCommentToOrder) | **POST** /API/Order/{id}/Comment | Adds a comment to the order
-[**createOrder**](OrderApi.md#createOrder) | **POST** /API/Order | Post a new order
-[**createOrderId**](OrderApi.md#createOrderId) | **POST** /API/Order/Id | Create a new order id
-[**deleteOrder**](OrderApi.md#deleteOrder) | **DELETE** /API/Order/{id} | Deletes or deactivates an order
-[**getCaptureById**](OrderApi.md#getCaptureById) | **GET** /API/Order/Capture/{captureId} | Get Capture by Id
-[**getOrderById**](OrderApi.md#getOrderById) | **GET** /API/Order/{id}/{include} | Get an instance of a order
-[**getOrderStatuses**](OrderApi.md#getOrderStatuses) | **GET** /API/Order/Statuses | Get a list of available order statuses
-[**getRefundById**](OrderApi.md#getRefundById) | **GET** /API/Order/Refund/{refundId} | Get Refund by Id
+[**addOrderComment**](OrderApi.md#addOrderComment) | **POST** /API/Order/{id}/Comment | Add order comment
+[**cancelOrderRow**](OrderApi.md#cancelOrderRow) | **DELETE** /API/Order/{orderId}/OrderRow/{orderRowId} | Cancel order row
+[**countOrders**](OrderApi.md#countOrders) | **GET** /API/Order/Count/{email} | Count orders
+[**createOrder**](OrderApi.md#createOrder) | **POST** /API/Order | Create order
+[**createOrderId**](OrderApi.md#createOrderId) | **POST** /API/Order/Id | Create order id
+[**deleteOrder**](OrderApi.md#deleteOrder) | **DELETE** /API/Order/{id} | Delete order
+[**getCapture**](OrderApi.md#getCapture) | **GET** /API/Order/Capture/{captureId} | Get capture
+[**getOrderId**](OrderApi.md#getOrderId) | **GET** /API/Order/{id}/{include} | Get order (id)
+[**getOrderPublicId**](OrderApi.md#getOrderPublicId) | **GET** /API/OrderByPublicId/{publicId}/{include} | Get order (public id)
+[**getOrderStatuses**](OrderApi.md#getOrderStatuses) | **GET** /API/Order/Statuses | Get order statuses
 [**partialUpdateOfOrder**](OrderApi.md#partialUpdateOfOrder) | **PATCH** /API/Order/{id} | Partial update of an order
-[**queryOrders**](OrderApi.md#queryOrders) | **POST** /API/Order/Query | Query the order repository
-[**setCaptureAsProcessed**](OrderApi.md#setCaptureAsProcessed) | **POST** /API/Order/Capture/SetAsProcessed | Set a capture as processed (&#x3D; captured)
-[**setPaymentAsPayed**](OrderApi.md#setPaymentAsPayed) | **POST** /API/Order/PaymentDetail/{paymentDetailId}/SetAsPayed | Set Payment Detail as payed
-[**setRefundAsProcessed**](OrderApi.md#setRefundAsProcessed) | **POST** /API/Order/Refund/SetAsProcessed | Set a refund as processed (&#x3D; settled)
+[**queryOrders**](OrderApi.md#queryOrders) | **POST** /API/Order/Query | Query orders
+[**setCaptureAsProcessed**](OrderApi.md#setCaptureAsProcessed) | **POST** /API/Order/Capture/SetAsProcessed | Set capture as processed
+[**setPaymentAsPaid**](OrderApi.md#setPaymentAsPaid) | **POST** /API/Order/PaymentDetail/{paymentDetailId}/SetAsPaid | Set payment as paid
 [**updateOrderStatus**](OrderApi.md#updateOrderStatus) | **POST** /API/Order/{id}/Status/{status}/{transactionId}/{secondaryTransactionId} | Update order status
-[**updateTransactionData**](OrderApi.md#updateTransactionData) | **POST** /API/Order/{id}/TransactionData | Updates transaction data on an order
-[**validateOrder**](OrderApi.md#validateOrder) | **POST** /API/Order/ValidateCreation | Validates order data for order creation.
+[**updateTransactionData**](OrderApi.md#updateTransactionData) | **POST** /API/Order/{id}/TransactionData | Update transaction data
+[**validateOrder**](OrderApi.md#validateOrder) | **POST** /API/Order/ValidateCreation | Validate order
 
 
 
-## addCommentToOrder
+## addOrderComment
 
-> Object addCommentToOrder(id, orderComment)
+> BaseEnvelope addOrderComment(id, orderComment)
 
-Adds a comment to the order
+Add order comment
 
-This add to (not replace) any previous comments.
+Adds a comment to an order. This does not replace any previous comments.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -46,10 +47,10 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 let id = 56; // Number | Order ID.
-let orderComment = new GeinsManagementApiSdkJs.APIOrderOrderComment(); // APIOrderOrderComment | The comment
-apiInstance.addCommentToOrder(id, orderComment, (error, data, response) => {
+let orderComment = new GeinsSdkApiMgmtJavascript.APIOrderOrderComment(); // APIOrderOrderComment | The comment
+apiInstance.addOrderComment(id, orderComment, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BaseEnvelope**](BaseEnvelope.md)
 
 ### Authorization
 
@@ -76,21 +77,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## createOrder
+## cancelOrderRow
 
-> EnvelopeInt createOrder(order)
+> BaseEnvelope cancelOrderRow(orderId, orderRowId, opts)
 
-Post a new order
+Cancel order row
+
+Cancels an order row.    Can only be done on an order that has not been delivered or cancelled.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -101,8 +104,124 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
-let order = new GeinsManagementApiSdkJs.OrderModelsOrder(); // OrderModelsOrder | The order object.
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
+let orderId = 56; // Number | The id of the order containing the order row.
+let orderRowId = 56; // Number | The id of the order row to cancel.
+let opts = {
+  'skipRestock': true // Boolean | If true will not restock the item that was cancelled. Defaults to false.
+};
+apiInstance.cancelOrderRow(orderId, orderRowId, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | **Number**| The id of the order containing the order row. | 
+ **orderRowId** | **Number**| The id of the order row to cancel. | 
+ **skipRestock** | **Boolean**| If true will not restock the item that was cancelled. Defaults to false. | [optional] 
+
+### Return type
+
+[**BaseEnvelope**](BaseEnvelope.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## countOrders
+
+> Number countOrders(email)
+
+Count orders
+
+Gets the number of orders placed with the supplied email address.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
+let email = "email_example"; // String | The email adress to aggregate on.
+apiInstance.countOrders(email, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **String**| The email adress to aggregate on. | 
+
+### Return type
+
+**Number**
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## createOrder
+
+> EnvelopeInt createOrder(order)
+
+Create order
+
+Create a new order.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
+let order = new GeinsSdkApiMgmtJavascript.OrderModelsOrder(); // OrderModelsOrder | The order object.
 apiInstance.createOrder(order, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -129,21 +248,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## createOrderId
 
 > EnvelopeInt createOrderId()
 
-Create a new order id
+Create order id
+
+Create a new order id.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -154,7 +275,7 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 apiInstance.createOrderId((error, data, response) => {
   if (error) {
     console.error(error);
@@ -179,20 +300,22 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## deleteOrder
 
 > Object deleteOrder(id, operation)
 
-Deletes or deactivates an order
+Delete order
+
+Deletes or deactivates an order.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -203,9 +326,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 let id = 56; // Number | The ID of the order to delete.
-let operation = 56; // Number | The method of deletion desired.
+let operation = 56; // Number | The method of deletion desired.    0 = OnHold. Put this order on hold.    1 = Cancel. Cancel this order permanently.    2 = Deactivate. Mark this order as no longer active.
 apiInstance.deleteOrder(id, operation, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -221,7 +344,7 @@ apiInstance.deleteOrder(id, operation, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| The ID of the order to delete. | 
- **operation** | **Number**| The method of deletion desired. | 
+ **operation** | **Number**| The method of deletion desired.    0 &#x3D; OnHold. Put this order on hold.    1 &#x3D; Cancel. Cancel this order permanently.    2 &#x3D; Deactivate. Mark this order as no longer active. | 
 
 ### Return type
 
@@ -234,20 +357,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
-## getCaptureById
+## getCapture
 
-> OrderCapture getCaptureById(captureId)
+> EnvelopeOrderCapture getCapture(captureId)
 
-Get Capture by Id
+Get capture
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -258,9 +381,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 let captureId = "captureId_example"; // String | Capture ID.
-apiInstance.getCaptureById(captureId, (error, data, response) => {
+apiInstance.getCapture(captureId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -278,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderCapture**](OrderCapture.md)
+[**EnvelopeOrderCapture**](EnvelopeOrderCapture.md)
 
 ### Authorization
 
@@ -287,20 +410,22 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
-## getOrderById
+## getOrderId
 
-> OrderModelsOrder getOrderById(id, include, opts)
+> OrderModelsOrder getOrderId(id, include, opts)
 
-Get an instance of a order
+Get order (id)
+
+Get order by id.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -311,13 +436,13 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 let id = 56; // Number | The ID of the order to get.
-let include = "include_example"; // String | A comma separated string of what related collections to include with this result set. The  possible values are: rows, paymentdetails, shippingdetails and refunds.
+let include = "include_example"; // String | A comma separated string of related collections to include with this result set.    Possible values are:    rows    paymentdetails    shippingdetails    refunds
 let opts = {
   'combineProductContainerRows': true // Boolean | If true, will combine all order rows that are part of a container into a single container row.
 };
-apiInstance.getOrderById(id, include, opts, (error, data, response) => {
+apiInstance.getOrderId(id, include, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -332,7 +457,7 @@ apiInstance.getOrderById(id, include, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| The ID of the order to get. | 
- **include** | **String**| A comma separated string of what related collections to include with this result set. The  possible values are: rows, paymentdetails, shippingdetails and refunds. | 
+ **include** | **String**| A comma separated string of related collections to include with this result set.    Possible values are:    rows    paymentdetails    shippingdetails    refunds | 
  **combineProductContainerRows** | **Boolean**| If true, will combine all order rows that are part of a container into a single container row. | [optional] 
 
 ### Return type
@@ -346,20 +471,22 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
-## getOrderStatuses
+## getOrderPublicId
 
-> [OrderModelsOrderStatus] getOrderStatuses()
+> OrderModelsOrder getOrderPublicId(publicId, include, opts)
 
-Get a list of available order statuses
+Get order (public id)
+
+Get order by public id.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -370,7 +497,68 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
+let publicId = "publicId_example"; // String | The Public ID of the order to get.
+let include = "include_example"; // String | A comma separated string of related collections to include with this result set.    Possible values are:    rows    paymentdetails    shippingdetails    refunds
+let opts = {
+  'combineProductContainerRows': true // Boolean | If true, will combine all order rows that are part of a container into a single container row.
+};
+apiInstance.getOrderPublicId(publicId, include, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **publicId** | **String**| The Public ID of the order to get. | 
+ **include** | **String**| A comma separated string of related collections to include with this result set.    Possible values are:    rows    paymentdetails    shippingdetails    refunds | 
+ **combineProductContainerRows** | **Boolean**| If true, will combine all order rows that are part of a container into a single container row. | [optional] 
+
+### Return type
+
+[**OrderModelsOrder**](OrderModelsOrder.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getOrderStatuses
+
+> [OrderModelsOrderStatus] getOrderStatuses()
+
+Get order statuses
+
+Get a list of available order statuses.
+
+### Example
+
+```javascript
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basicAuth
+let basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 apiInstance.getOrderStatuses((error, data, response) => {
   if (error) {
     console.error(error);
@@ -395,60 +583,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-
-## getRefundById
-
-> OrderRefund getRefundById(refundId)
-
-Get Refund by Id
-
-### Example
-
-```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure HTTP basic authorization: basicAuth
-let basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR USERNAME';
-basicAuth.password = 'YOUR PASSWORD';
-
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
-let refundId = "refundId_example"; // String | Refund ID.
-apiInstance.getRefundById(refundId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **refundId** | **String**| Refund ID. | 
-
-### Return type
-
-[**OrderRefund**](OrderRefund.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## partialUpdateOfOrder
@@ -460,8 +595,8 @@ Partial update of an order
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -472,9 +607,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 let id = 56; // Number | The orderId of the order to update
-let order = new GeinsManagementApiSdkJs.OrderModelsOrderUpdate(); // OrderModelsOrderUpdate | The order object containing the properties that should be updated.
+let order = new GeinsSdkApiMgmtJavascript.OrderModelsOrderUpdate(); // OrderModelsOrderUpdate | The order object containing the properties that should be updated.
 apiInstance.partialUpdateOfOrder(id, order, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -502,21 +637,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## queryOrders
 
 > [OrderModelsOrder] queryOrders(query)
 
-Query the order repository
+Query orders
+
+Queries orders.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -527,8 +664,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
-let query = new GeinsManagementApiSdkJs.OrderModelsOrderQuery(); // OrderModelsOrderQuery | The details of the query.
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
+let query = new GeinsSdkApiMgmtJavascript.OrderModelsOrderQuery(); // OrderModelsOrderQuery | The details of the query.
 apiInstance.queryOrders(query, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -555,21 +692,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## setCaptureAsProcessed
 
-> Object setCaptureAsProcessed(processedCapture)
+> BaseEnvelope setCaptureAsProcessed(processedCapture)
 
-Set a capture as processed (&#x3D; captured)
+Set capture as processed
+
+Sets a capture as processed (&#x3D; captured).
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -580,8 +719,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
-let processedCapture = new GeinsManagementApiSdkJs.OrderProcessedCapture(); // OrderProcessedCapture | Contains CaptureId and optional metadata about capture.
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
+let processedCapture = new GeinsSdkApiMgmtJavascript.OrderProcessedCapture(); // OrderProcessedCapture | Contains CaptureId and optional metadata about capture.
 apiInstance.setCaptureAsProcessed(processedCapture, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -600,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BaseEnvelope**](BaseEnvelope.md)
 
 ### Authorization
 
@@ -608,21 +747,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## setPaymentAsPayed
+## setPaymentAsPaid
 
-> Object setPaymentAsPayed(paymentDetailId)
+> BaseEnvelope setPaymentAsPaid(paymentDetailId)
 
-Set Payment Detail as payed
+Set payment as paid
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -633,9 +772,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 let paymentDetailId = 56; // Number | Payment Detail ID.
-apiInstance.setPaymentAsPayed(paymentDetailId, (error, data, response) => {
+apiInstance.setPaymentAsPaid(paymentDetailId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -653,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BaseEnvelope**](BaseEnvelope.md)
 
 ### Authorization
 
@@ -662,73 +801,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-
-## setRefundAsProcessed
-
-> Object setRefundAsProcessed(processedRefund)
-
-Set a refund as processed (&#x3D; settled)
-
-### Example
-
-```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure HTTP basic authorization: basicAuth
-let basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR USERNAME';
-basicAuth.password = 'YOUR PASSWORD';
-
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
-let processedRefund = new GeinsManagementApiSdkJs.OrderProcessedRefund(); // OrderProcessedRefund | Contains RefundId and optional metadata about refund.
-apiInstance.setRefundAsProcessed(processedRefund, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **processedRefund** | [**OrderProcessedRefund**](OrderProcessedRefund.md)| Contains RefundId and optional metadata about refund. | 
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## updateOrderStatus
 
-> Object updateOrderStatus(id, status, transactionId, secondaryTransactionId)
+> BaseEnvelope updateOrderStatus(id, status, transactionId, secondaryTransactionId)
 
 Update order status
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -739,9 +825,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
-let id = 56; // Number | Order ID.
-let status = 56; // Number | Order status. These statuses can be set: cancelled, on-hold, inactive, out-of-stock,  backorder, completed, pending.
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
+let id = 56; // Number | The order id.
+let status = 56; // Number | The order status to set.    0 = Undefined    1 = Completed    2 = Cancelled    3 = OnHold    4 = Inactive    5 = OutOfStock    6 = Backorder    7 = Pending
 let transactionId = "transactionId_example"; // String | A transaction id can be set here if status is set to pending.
 let secondaryTransactionId = "secondaryTransactionId_example"; // String | A secondary transaction id, if any, can be set here if status is set to pending.
 apiInstance.updateOrderStatus(id, status, transactionId, secondaryTransactionId, (error, data, response) => {
@@ -758,14 +844,14 @@ apiInstance.updateOrderStatus(id, status, transactionId, secondaryTransactionId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Order ID. | 
- **status** | **Number**| Order status. These statuses can be set: cancelled, on-hold, inactive, out-of-stock,  backorder, completed, pending. | 
+ **id** | **Number**| The order id. | 
+ **status** | **Number**| The order status to set.    0 &#x3D; Undefined    1 &#x3D; Completed    2 &#x3D; Cancelled    3 &#x3D; OnHold    4 &#x3D; Inactive    5 &#x3D; OutOfStock    6 &#x3D; Backorder    7 &#x3D; Pending | 
  **transactionId** | **String**| A transaction id can be set here if status is set to pending. | 
  **secondaryTransactionId** | **String**| A secondary transaction id, if any, can be set here if status is set to pending. | 
 
 ### Return type
 
-**Object**
+[**BaseEnvelope**](BaseEnvelope.md)
 
 ### Authorization
 
@@ -774,20 +860,22 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: application/json
 
 
 ## updateTransactionData
 
-> Object updateTransactionData(id, transactionData)
+> BaseEnvelope updateTransactionData(id, transactionData)
 
-Updates transaction data on an order
+Update transaction data
+
+Updates transaction data on an order.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -798,9 +886,9 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
 let id = 56; // Number | Order ID.
-let transactionData = new GeinsManagementApiSdkJs.APIOrderTransactionData(); // APIOrderTransactionData | The transaction data
+let transactionData = new GeinsSdkApiMgmtJavascript.APIOrderTransactionData(); // APIOrderTransactionData | The transaction data
 apiInstance.updateTransactionData(id, transactionData, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -820,7 +908,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BaseEnvelope**](BaseEnvelope.md)
 
 ### Authorization
 
@@ -828,21 +916,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## validateOrder
 
-> Object validateOrder(request)
+> EnvelopeAPIOrderOrderCreationValidationStatus validateOrder(request)
+
+Validate order
 
 Validates order data for order creation.
 
 ### Example
 
 ```javascript
-import GeinsManagementApiSdkJs from 'geins_management_api_sdk_js';
-let defaultClient = GeinsManagementApiSdkJs.ApiClient.instance;
+import GeinsSdkApiMgmtJavascript from '@geins/sdk-api-mgmt-javascript';
+let defaultClient = GeinsSdkApiMgmtJavascript.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -853,8 +943,8 @@ let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new GeinsManagementApiSdkJs.OrderApi();
-let request = new GeinsManagementApiSdkJs.OrderValidateOrderCreationRequest(); // OrderValidateOrderCreationRequest | The order data to validate.
+let apiInstance = new GeinsSdkApiMgmtJavascript.OrderApi();
+let request = new GeinsSdkApiMgmtJavascript.OrderValidateOrderCreationRequest(); // OrderValidateOrderCreationRequest | The order data to validate.
 apiInstance.validateOrder(request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -873,7 +963,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**EnvelopeAPIOrderOrderCreationValidationStatus**](EnvelopeAPIOrderOrderCreationValidationStatus.md)
 
 ### Authorization
 
@@ -881,6 +971,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 

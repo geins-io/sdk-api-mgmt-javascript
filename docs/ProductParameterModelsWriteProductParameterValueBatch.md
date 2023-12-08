@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.ProductParameterModelsWriteProductParameterValueBatch
+# GeinsSdkApiMgmtJavascript.ProductParameterModelsWriteProductParameterValueBatch
 
 ## Properties
 

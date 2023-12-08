@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.APIOrderOrderComment
+# GeinsSdkApiMgmtJavascript.APIOrderOrderComment
 
 ## Properties
 

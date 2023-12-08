@@ -1,4 +1,4 @@
-# GeinsManagementApiSdkJs.PageAreaModelsReadPageAreaFamily
+# GeinsSdkApiMgmtJavascript.PageAreaModelsReadPageAreaFamily
 
 ## Properties
 
